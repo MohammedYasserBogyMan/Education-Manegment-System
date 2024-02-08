@@ -37,4 +37,6 @@ class AppColors {
   static Color colorBorderBack = const Color(0xffCFCFCF);
   static Color colorBackgroundButton = const Color(0xffEEEEEE);
   static Color colorPending = const Color(0xffFBF1EF);
+  static Color colorBackGroundApp = const Color(0xff18171E);
+  static Color colorTextAppBar = const Color(0xff3B3A41);
 }
