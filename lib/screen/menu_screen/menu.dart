@@ -1,7 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:school/main.dart';
 
+import '../../shared/color.dart';
 
 class MenuScreen extends StatelessWidget {
   const MenuScreen({Key? key}) : super(key: key);
@@ -9,7 +9,7 @@ class MenuScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.purple[200],
+      backgroundColor: AppColors.colorBackGroundApp,
       body: SafeArea(
         child: ListView(
           padding: const EdgeInsets.only(left: 15),

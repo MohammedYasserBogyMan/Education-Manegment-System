@@ -39,4 +39,6 @@ class AppColors {
   static Color colorPending = const Color(0xffFBF1EF);
   static Color colorBackGroundApp = const Color(0xff18171E);
   static Color colorTextAppBar = const Color(0xff3B3A41);
+  static Color colorContainer = const Color(0xff1F1E26);
+  static Color colorGreyBlack = const Color(0xff545454);
 }

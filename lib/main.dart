@@ -3,13 +3,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:school/screen/home_screen/cubit/home_cubit.dart';
 import 'package:school/screen/login/cubit/login_cubit.dart';
-import 'package:school/screen/login/login_screen.dart';
 import 'package:school/screen/register/cubit/register_cubit.dart';
-import 'package:school/screen/register/register_screen.dart';
+import 'package:school/shared/color.dart';
 
 import 'screen/home_screen/home_screen.dart';
 import 'screen/menu_screen/menu.dart';
@@ -37,9 +35,10 @@ BlocProvider<LoginCubit>(create: (context)=>LoginCubit())
           debugShowCheckedModeBanner: false,
           title: 'Assignment App',
           theme: ThemeData(
+            scaffoldBackgroundColor: AppColors.colorBackGroundApp,
             primarySwatch: Colors.purple,
           ),
-          home:  LogInScreen(),
+          home: MyHomePage(),
         ),
       ),
     );
@@ -61,12 +60,14 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.purple[200],
+      backgroundColor: AppColors.colorBackGroundApp,
       body: ZoomDrawer(
         controller: _drawerController,
         style: DrawerStyle.defaultStyle,
         menuScreen: const MenuScreen(),
-        mainScreen: HomeScreen(zoomController: _drawerController,),
+        mainScreen: HomeScreen(
+          zoomController: _drawerController,
+        ),
         borderRadius: 24.0,
         showShadow: false,
         angle: 0.0,
