@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:school/screen/profile/widget/build_info.dart';
 import 'package:school/shared/color.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -22,13 +24,23 @@ class ProfileScreen extends StatelessWidget {
     children: [
     Column( mainAxisAlignment: MainAxisAlignment.center ,
       children: [
-        ClipRRect(child: Image.asset('assets/images/user.svg.png', width: 150,height: 150,)),
-        const Padding(
-          padding: EdgeInsets.symmetric(vertical: 10.0),
-          child:  Text('Student Name', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold , color: Colors.white)),
-        ),
-        const Text( '20200157', style: TextStyle(fontSize: 18, color: Colors.white)),
-      ],
+                ClipRRect(
+                    child: Image.asset(
+                  'assets/images/image_person.png',
+                  width: 100.w,
+                  height: 100.h,
+                )),
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 10.0),
+                  child: Text('Student Name',
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white)),
+                ),
+                const Text('20200157',
+                    style: TextStyle(fontSize: 18, color: Colors.white)),
+              ],
     ),
       const Spacer(flex: 1) ,
       buildInfo('Gender :', 'Mall'),
@@ -44,27 +56,5 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 
-  Widget buildInfo(String title, String subtitle) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 16.0),
-      child: Row(mainAxisAlignment: MainAxisAlignment.start,
 
-        children: [
-          Text(
-            title,
-            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold , color: Colors.white),
-          ),
-          const SizedBox(height: 10),
-          Padding(
-            padding: const EdgeInsets.only(left: 4.0),
-            child: Text(
-                subtitle,
-              style: const TextStyle(fontSize: 16, color: Colors.grey),
-            ),
-          ),
-
-        ],
-      ),
-    );
-  }
 }

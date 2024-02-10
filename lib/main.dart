@@ -1,15 +1,14 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
-import 'package:school/screen/home_screen/cubit/home_cubit.dart';
+import 'package:school/screen/home_/cubit/layout_cubit.dart';
+import 'package:school/screen/layout_screen/cubit/layout_cubit.dart';
+import 'package:school/screen/layout_screen/layout_screen.dart';
 import 'package:school/screen/login/cubit/login_cubit.dart';
 import 'package:school/screen/register/cubit/register_cubit.dart';
 import 'package:school/shared/color.dart';
 
-import 'screen/home_screen/home_screen.dart';
 import 'screen/menu_screen/menu.dart';
 
 void main() {
@@ -23,9 +22,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-BlocProvider<HomeCubit>(create: (context)=>HomeCubit()),
-BlocProvider<RegisterCubit>(create: (context)=>RegisterCubit()),
-BlocProvider<LoginCubit>(create: (context)=>LoginCubit())
+        BlocProvider<LayoutCubit>(create: (context) => LayoutCubit()),
+        BlocProvider<HomeCubit>(create: (context) => HomeCubit()),
+        BlocProvider<RegisterCubit>(create: (context) => RegisterCubit()),
+        BlocProvider<LoginCubit>(create: (context) => LoginCubit())
       ],
       child: ScreenUtilInit(
         designSize: const Size(390, 844),
@@ -65,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
         controller: _drawerController,
         style: DrawerStyle.defaultStyle,
         menuScreen: const MenuScreen(),
-        mainScreen: HomeScreen(
+        mainScreen: LayoutScreen(
           zoomController: _drawerController,
         ),
         borderRadius: 24.0,
