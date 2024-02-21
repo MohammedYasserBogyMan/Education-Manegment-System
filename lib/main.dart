@@ -7,6 +7,7 @@ import 'package:school/screen/layout_screen/cubit/layout_cubit.dart';
 import 'package:school/screen/layout_screen/layout_screen.dart';
 import 'package:school/screen/login/cubit/login_cubit.dart';
 import 'package:school/screen/register/cubit/register_cubit.dart';
+import 'package:school/screen/schedules/cubit/schedules_cubit.dart';
 import 'package:school/shared/color.dart';
 
 import 'screen/menu_screen/menu.dart';
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
         BlocProvider<LayoutCubit>(create: (context) => LayoutCubit()),
         BlocProvider<HomeCubit>(create: (context) => HomeCubit()),
         BlocProvider<RegisterCubit>(create: (context) => RegisterCubit()),
-        BlocProvider<LoginCubit>(create: (context) => LoginCubit())
+        BlocProvider<LoginCubit>(create: (context) => LoginCubit()),
+        BlocProvider<SchedulesCubit>(create: (context) => SchedulesCubit())
       ],
       child: ScreenUtilInit(
         designSize: const Size(390, 844),

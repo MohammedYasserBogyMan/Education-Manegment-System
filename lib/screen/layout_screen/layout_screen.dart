@@ -58,7 +58,7 @@ class LayoutScreen extends StatelessWidget {
             currentIndex: cubit.current,
             iconSize: 25,
             backgroundColor: Colors.white,
-            selectedItemColor: Colors.purple,
+            selectedItemColor: AppColors.colorBlueBlack,
             unselectedItemColor: Colors.grey,
             selectedLabelStyle: const TextStyle(
                 fontSize: 20, fontWeight: FontWeight.bold, height: 0.8),
