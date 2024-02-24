@@ -5,12 +5,14 @@ Widget buildListOfDays({required Color colorBack, required Color colorText,requi
 ,required void Function()? onPressed,
 }) {
   return   ElevatedButton(
-    style: ElevatedButton.styleFrom( fixedSize: const Size(75, 40),
+    style: ElevatedButton.styleFrom(
+      fixedSize: const Size(80, 40),
       backgroundColor: colorBack, // Set background color
       foregroundColor: colorText, // Set text color
       shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadiusDirectional.all(Radius.circular(40),
-          ), // Set border radius
+        borderRadius: BorderRadiusDirectional.all(
+          Radius.circular(40),
+        ), // Set border radius
       ),
     ),
     onPressed:onPressed,

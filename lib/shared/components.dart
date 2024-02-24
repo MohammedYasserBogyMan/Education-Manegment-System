@@ -389,3 +389,47 @@ class LoadingWidget extends StatelessWidget {
     );
   }
 }
+
+class ConDetiales extends StatelessWidget {
+  final String title;
+  final String details;
+  final IconData? icon;
+
+  const ConDetiales(
+      {super.key, required this.title, required this.details, this.icon});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          title
+          //'Create by'
+          ,
+          style: TextStyle(
+            color: Colors.grey,
+            fontSize: 10.sp,
+          ),
+        ),
+        Row(
+          children: [
+            Icon(
+              icon ?? Icons.person,
+              size: 10,
+              color: Colors.white,
+            ),
+            Text(
+              details,
+              // 'Teacher Name',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 14.sp,
+              ),
+            ),
+          ],
+        )
+      ],
+    );
+  }
+}

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
+import 'package:school/screen/exams/cubit/exams_cubit.dart';
 import 'package:school/screen/home_/cubit/layout_cubit.dart';
 import 'package:school/screen/layout_screen/cubit/layout_cubit.dart';
 import 'package:school/screen/layout_screen/layout_screen.dart';
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
         BlocProvider<HomeCubit>(create: (context) => HomeCubit()),
         BlocProvider<RegisterCubit>(create: (context) => RegisterCubit()),
         BlocProvider<LoginCubit>(create: (context) => LoginCubit()),
-        BlocProvider<SchedulesCubit>(create: (context) => SchedulesCubit())
+        BlocProvider<SchedulesCubit>(create: (context) => SchedulesCubit()),
+        BlocProvider<ExamsCubit>(create: (context) => ExamsCubit())
       ],
       child: ScreenUtilInit(
         designSize: const Size(390, 844),
