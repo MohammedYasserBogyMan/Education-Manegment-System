@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../assignments/assignments_screen.dart';
 import '../../exams/exams.dart';
 import '../../home_/home_screen.dart';
 import '../../profile/profile_screen.dart';
@@ -18,7 +17,8 @@ class LayoutCubit extends Cubit<HomeState> {
   List<Widget> screen = [
     HomeScreen(),
     SchedulesPage(),
-    AssignmentsScreen(),
+    //DashBoardScreen(),
+    AttendancePage(),
     ExamsScreen(),
     ProfileScreen(),
   ];

@@ -7,6 +7,7 @@ import 'package:school/screen/home_/cubit/layout_cubit.dart';
 import 'package:school/screen/layout_screen/cubit/layout_cubit.dart';
 import 'package:school/screen/layout_screen/layout_screen.dart';
 import 'package:school/screen/login/cubit/login_cubit.dart';
+import 'package:school/screen/login/login_screen.dart';
 import 'package:school/screen/register/cubit/register_cubit.dart';
 import 'package:school/screen/schedules/cubit/schedules_cubit.dart';
 import 'package:school/shared/color.dart';
@@ -42,7 +43,7 @@ class MyApp extends StatelessWidget {
             scaffoldBackgroundColor: AppColors.colorBackGroundApp,
             primarySwatch: Colors.purple,
           ),
-          home: MyHomePage(),
+          home: LogInScreen(),
         ),
       ),
     );

@@ -2,9 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:school/screen/register/cubit/register_cubit.dart';
-import 'package:school/shared/nav.dart';
 
 import '../../shared/color.dart';
 import 'helper/business_screen.dart';
@@ -16,6 +14,7 @@ class RegisterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.colorWhite,
       appBar: AppBar(
         centerTitle: true,
         title: Text(
@@ -51,9 +50,9 @@ class RegisterScreen extends StatelessWidget {
                           height: 125.h,
                           width: 170.w,
                           decoration: BoxDecoration(
-                            color:  cubit.isIndividual
-                                ? AppColors.colorBlueBlack
-                                : Colors.white,
+                              color:  cubit.isIndividual
+                                  ? AppColors.colorBlueBlack
+                                  : Colors.white,
                               borderRadius: BorderRadius.circular(20.r),
                               border: Border.all(
                                   color: cubit.isIndividual
@@ -71,6 +70,7 @@ class RegisterScreen extends StatelessWidget {
                               Text(
                                 "student",
                                 style: TextStyle(
+
                                   ///
                                     fontSize: 20.sp,
                                     color: cubit.isIndividual
@@ -87,10 +87,10 @@ class RegisterScreen extends StatelessWidget {
                           height: 125.h,
                           width: 170.w,
                           decoration: BoxDecoration(
-                            color:cubit.isIndividual == false? AppColors.colorBlueBlack:Colors.white,
+                              color:cubit.isIndividual == false? AppColors.colorBlueBlack:Colors.white,
                               borderRadius: BorderRadius.circular(20.r),
                               border: Border.all(
-                                  )),
+                              )),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -129,7 +129,7 @@ class RegisterScreen extends StatelessWidget {
                         // Adding space between the texts
                         GestureDetector(
                           onTap: () {},
-                             // navigateReplacementTo(context, LogInScreen()),
+                          // navigateReplacementTo(context, LogInScreen()),
                           child: Text(
                             'Sign in',
                             style: TextStyle(

@@ -4,13 +4,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-
+import 'package:school/main.dart';
 
 import '../../../shared/nav.dart';
-
 import '../../shared/color.dart';
 import '../../shared/components.dart';
-import '../../shared/toust.dart';
 import '../../shared/validator.dart';
 import '../register/register_screen.dart';
 import 'cubit/login_cubit.dart';
@@ -28,6 +26,7 @@ class LogInScreen extends StatelessWidget {
       },
       builder: (context, state) {
         return Scaffold(
+          backgroundColor: AppColors.colorWhite,
           resizeToAvoidBottomInset: false,
           appBar: AppBar(
             centerTitle: true,
@@ -54,7 +53,7 @@ class LogInScreen extends StatelessWidget {
                   Text(
                     "Welcome back ",
                     style:
-                        TextStyle(fontSize: 20.sp, color: AppColors.colorBlack),
+                    TextStyle(fontSize: 20.sp, color: AppColors.colorBlack),
                   ),
                   SizedBox(height: 45.h),
                   CustomTextFormField(
@@ -97,7 +96,7 @@ class LogInScreen extends StatelessWidget {
                     children: [
                       GestureDetector(
                         onTap: () {},
-                            //navigateTo(context, ForgotPasswordScreen()),
+                        //navigateTo(context, ForgotPasswordScreen()),
                         child: Text(
                           "Forgot your password?",
                           style: TextStyle(
@@ -111,7 +110,7 @@ class LogInScreen extends StatelessWidget {
                     isActive: state is LoginLoadingState ? false : true,
                     onTap: () {
                       if (_formKey.currentState!.validate()) {
-
+                        navigateFinish(context, MyHomePage());
                       }
                     },
                     title: "Login",
