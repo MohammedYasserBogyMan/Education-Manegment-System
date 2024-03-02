@@ -1,10 +1,10 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:school/main.dart';
+import 'package:school/screen/register/Screens/tesy.dart';
 
 import '../../../shared/nav.dart';
 import '../../shared/color.dart';
@@ -13,58 +13,83 @@ import '../../shared/validator.dart';
 import '../register/register_screen.dart';
 import 'cubit/login_cubit.dart';
 
-class LogInScreen extends StatelessWidget {
-  LogInScreen({super.key});
+class LogInScreen extends StatefulWidget {
+  const LogInScreen({super.key});
 
+  @override
+  State<LogInScreen> createState() => _LogInScreenState();
+}
+
+class _LogInScreenState extends State<LogInScreen> {
   final _formKey = GlobalKey<FormState>();
 
+  bool value = false;
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<LoginCubit, LoginState>(
-      listener: (context, state) {
-
-      },
+      listener: (context, state) {},
       builder: (context, state) {
         return Scaffold(
-          backgroundColor: AppColors.colorWhite,
+          backgroundColor: AppColors.colorBackGroundApp,
           resizeToAvoidBottomInset: false,
           appBar: AppBar(
+            backgroundColor: Colors.transparent,
             centerTitle: true,
             title: Text(
               "Login",
-              style: TextStyle(fontSize: 20.sp, color: AppColors.colorBlack),
+              style: TextStyle(fontSize: 20.sp, color: AppColors.colorWhite),
             ),
           ),
           body: Form(
             key: _formKey,
             child: Padding(
-              padding: EdgeInsets.all(24.r),
+              padding: const EdgeInsets.all(45),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
-                    "Login",
-                    style: TextStyle(
-                        fontSize: 35.sp,
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.colorBlack),
+                  const SizedBox(
+                    height: 15,
                   ),
-                  SizedBox(height: 6.h),
-                  Text(
-                    "Welcome back ",
-                    style:
-                    TextStyle(fontSize: 20.sp, color: AppColors.colorBlack),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 12),
+                    child: Center(
+                      child: Text(
+                        "Welcome back to \nSMS",
+                        style: TextStyle(
+                            fontSize: 35.sp,
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.colorWhite),
+                      ),
+                    ),
                   ),
-                  SizedBox(height: 45.h),
+                  SizedBox(
+                    height: 6.h,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 16),
+                    child: Text(
+                      "Empowering minds,\ninspiring Futures",
+                      style: TextStyle(
+                          fontSize: 20.sp, color: AppColors.colorWhite),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 45.h,
+                  ),
                   CustomTextFormField(
                     maxNumber: 11,
                     textController: LoginCubit.get(context).phoneController,
                     validator: (phone) => Validator.validatePhone(phone!),
                     inputType: TextInputType.phone,
-                    prefixIcon: Icon(IconlyBroken.addUser),
-                    hintText: "student ID",
+                    prefixIcon: Icon(
+                      IconlyBroken.addUser,
+                      color: AppColors.colorGrey,
+                    ),
+                    hintText: "Enter your student ID or Email",
                   ),
-                  SizedBox(height: 16.h),
+                  SizedBox(
+                    height: 16.h,
+                  ),
                   CustomTextFormField(
                     textController: LoginCubit.get(context).passwordController,
                     validator: (password) =>
@@ -84,38 +109,35 @@ class LogInScreen extends StatelessWidget {
                     ),
                     prefixIcon: SvgPicture.asset(
                       "assets/icons/Lock_icon.svg",
+                      color: AppColors.colorGrey,
                       semanticsLabel: 'lock_icon',
                       height: 22.h,
                       width: 16.w,
                     ),
                     hintText: "Password",
                   ),
-                  SizedBox(height: 16.h),
+                  SizedBox(
+                    height: 35.h,
+                  ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      GestureDetector(
-                        onTap: () {},
-                        //navigateTo(context, ForgotPasswordScreen()),
-                        child: Text(
-                          "Forgot your password?",
-                          style: TextStyle(
-                              fontSize: 15.sp, color: AppColors.colorBlack),
-                        ),
+                      customCheekBox(),
+                      const SizedBox(
+                        width: 10,
                       ),
+                      Text(
+                        'Remember me on this devic',
+                        style: TextStyle(
+                          fontSize: 15.sp,
+                          color: AppColors.colorWhite,
+                        ),
+                      )
                     ],
                   ),
-                  SizedBox(height: 56.h),
-                  MusterButton(
-                    isActive: state is LoginLoadingState ? false : true,
-                    onTap: () {
-                      if (_formKey.currentState!.validate()) {
-                        navigateFinish(context, MyHomePage());
-                      }
-                    },
-                    title: "Login",
+                  const SizedBox(
+                    height: 90,
                   ),
-                  SizedBox(height: 16.h),
                   Center(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -123,67 +145,56 @@ class LogInScreen extends StatelessWidget {
                         Text(
                           "Don't Have an account?",
                           style: TextStyle(
-                              fontSize: 15.sp, color: AppColors.colorBlack),
+                              fontSize: 15.sp,
+                              color: AppColors.colorLightGreen),
                         ),
                         const SizedBox(width: 5),
-                        // Adding space between the texts
                         GestureDetector(
-                          onTap: () =>
-                              navigateTo(context, const RegisterScreen()),
+                          onTap: () => navigateTo(context,
+                              const Register_Page()), // شيلت الصفحه القديمه وحطيت الجديده
                           child: Text(
-                            'Sign up',
+                            'Register here.',
                             style: TextStyle(
                                 fontSize: 15.sp,
-                                color: AppColors.colorBlack,
+                                color: AppColors.colorWhite,
                                 fontWeight: FontWeight.bold),
                           ),
                         ),
                       ],
                     ),
                   ),
-                  Spacer(),
-                  Center(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "By continuing, You agree to our",
-                          style: TextStyle(
-                              fontSize: 15.sp, color: AppColors.colorBlack),
-                        ),
-                        const SizedBox(width: 5),
-                        // Adding space between the texts
-                        GestureDetector(
-                          onTap: null,
-                          child: Text(
-                            'Terms of Service',
-                            style: TextStyle(
-                                fontSize: 15.sp,
-                                color: AppColors.colorPrimary,
-                                decoration: TextDecoration.underline),
-                          ),
-                        ),
-                      ],
-                    ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  MusterButton(
+                    isActive: state is LoginLoadingState ? false : true,
+                    onTap: () {
+                      if (_formKey.currentState!.validate()) {
+                        navigateFinish(context, const MyHomePage());
+                      }
+                    },
+                    title: "Sign in",
+                  ),
+                  const SizedBox(
+                    height: 10,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "and ",
+                        "Forgot your password? ",
                         style: TextStyle(
-                            fontSize: 15.sp, color: AppColors.colorBlack),
+                            fontSize: 15.sp, color: AppColors.colorLightGreen),
                       ),
-                      const SizedBox(width: 5),
-                      // Adding space between the texts
                       GestureDetector(
-                        onTap: null,
+                        onTap: () {},
+                        //navigateTo(context, ForgotPasswordScreen()),
                         child: Text(
-                          'Privacy Policy.',
+                          "Reset Now.",
                           style: TextStyle(
                               fontSize: 15.sp,
-                              color: AppColors.colorPrimary,
-                              decoration: TextDecoration.underline),
+                              color: AppColors.colorWhite,
+                              fontWeight: FontWeight.bold),
                         ),
                       ),
                     ],
@@ -194,6 +205,31 @@ class LogInScreen extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+
+  customCheekBox() {
+    return Container(
+      height: 25,
+      width: 25,
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: Colors.white,
+          width: 2.0,
+        ),
+        borderRadius: BorderRadius.circular(8.0),
+      ),
+      child: Checkbox(
+        value: value,
+        onChanged: (bool? newValue) {
+          setState(() {
+            value = newValue!;
+          });
+        },
+        side: const BorderSide(style: BorderStyle.none),
+        checkColor: Colors.green,
+        activeColor: Colors.transparent,
+      ),
     );
   }
 }

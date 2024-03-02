@@ -66,8 +66,8 @@ class CustomTile extends StatelessWidget {
                   : AppColors.colorgreendark,
               border: isCheck
                   ? Border.all(
-                color: AppColors.colorBlack,
-              )
+                      color: AppColors.colorBlack,
+                    )
                   : Border.all(color: Colors.grey.shade400),
               borderRadius: BorderRadius.circular(50.r)),
           child: Center(
@@ -96,10 +96,10 @@ class CustomTile extends StatelessWidget {
 class ImageBusiness extends StatelessWidget {
   ImageBusiness(
       {super.key,
-        required this.image,
-        required this.isDone,
-        required this.onTap,
-        required this.title});
+      required this.image,
+      required this.isDone,
+      required this.onTap,
+      required this.title});
 
   final String image;
   final String title;
@@ -236,7 +236,7 @@ class BackIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap ??
-              () {
+          () {
             navigateBack(context);
           },
       child: Container(
@@ -314,7 +314,7 @@ class CustomTextFormField extends StatelessWidget {
       width: width,
       height: height,
       child: SizedBox(
-        width: double.infinity,
+        width: 290, // كانت double.infinity
         child: TextFormField(
           onChanged: onChanged,
           controller: textController,
@@ -324,10 +324,10 @@ class CustomTextFormField extends StatelessWidget {
           maxLength: maxNumber,
           maxLines: maxLines,
           onTap: onTap,
-          style: TextStyle(fontSize: 16.sp, color: AppColors.colorBlack),
+          style: TextStyle(fontSize: 16.sp, color: AppColors.colorWhite),
           autovalidateMode: AutovalidateMode.onUserInteraction,
           inputFormatters: inputType == TextInputType.number ||
-              inputType == TextInputType.phone
+                  inputType == TextInputType.phone
               ? [FilteringTextInputFormatter.digitsOnly]
               : inputFormatters,
           obscureText: isPassword ?? false,
@@ -339,7 +339,7 @@ class CustomTextFormField extends StatelessWidget {
                 child: prefixIcon,
               ),
               prefixIconConstraints:
-              BoxConstraints.loose(const Size.fromWidth(90)),
+                  BoxConstraints.loose(const Size.fromWidth(90)),
               hintText: hintText,
               hintStyle: TextStyle(fontSize: 14.sp, color: Color(0xff959595)),
               helperStyle: TextStyle(color: Color(0xff7E7E7E)),
@@ -368,7 +368,7 @@ class CustomTextFormField extends StatelessWidget {
                     color: AppColors.colorBackground,
                   )),
               contentPadding:
-              const EdgeInsets.symmetric(horizontal: 10, vertical: 10)),
+                  const EdgeInsets.symmetric(horizontal: 10, vertical: 10)),
         ),
       ),
     );

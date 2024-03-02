@@ -56,24 +56,24 @@ class LayoutScreen extends StatelessWidget {
               cubit.changeIndex(index);
             },
             currentIndex: cubit.current,
-            iconSize: 25,
-            backgroundColor: Colors.white,
-            selectedItemColor: AppColors.colorBlueBlack,
-            unselectedItemColor: Colors.grey,
+            iconSize: 20,
+            backgroundColor: AppColors.colorBackGroundApp,
+            selectedItemColor: Colors.blue,
+            unselectedItemColor: Colors.white,
             selectedLabelStyle: const TextStyle(
                 fontSize: 20, fontWeight: FontWeight.bold, height: 0.8),
             type: BottomNavigationBarType.fixed,
             items: const [
               BottomNavigationBarItem(
-                  icon: FaIcon(FontAwesomeIcons.home), label: '_'),
+                  icon: FaIcon(FontAwesomeIcons.home), label: 'Home'),
               BottomNavigationBarItem(
-                  icon: FaIcon(FontAwesomeIcons.clipboard), label: ''),
+                  icon: FaIcon(FontAwesomeIcons.clipboard), label: 'Schedule'),
               BottomNavigationBarItem(
-                  icon: FaIcon(FontAwesomeIcons.calendar), label: ''),
+                  icon: FaIcon(FontAwesomeIcons.calendar), label: 'Attendance'),
               BottomNavigationBarItem(
-                  icon: FaIcon(FontAwesomeIcons.file), label: ''),
+                  icon: FaIcon(FontAwesomeIcons.file), label: 'Exams'),
               BottomNavigationBarItem(
-                  icon: FaIcon(FontAwesomeIcons.user), label: ''),
+                  icon: FaIcon(FontAwesomeIcons.user), label: 'Profile'),
             ],
           ),
           floatingActionButtonLocation:

@@ -131,6 +131,7 @@ class ExamsScreen extends StatelessWidget {
                   inputType: TextInputType.text,
                   prefixIcon: Icon(IconlyBroken.search),
                   hintText: "Search any exam by name or department",
+                  // ignore: body_might_complete_normally_nullable
                   validator: (String) {},
                 ),
                 SizedBox(

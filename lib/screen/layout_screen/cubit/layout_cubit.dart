@@ -5,7 +5,7 @@ import '../../exams/exams.dart';
 import '../../home_/home_screen.dart';
 import '../../profile/profile_screen.dart';
 import '../../schedules/schedules_page.dart';
-import '../../statistics/statistics_screen.dart';
+import '../../attendans/statistics_screen.dart';
 
 part 'layout_state.dart';
 

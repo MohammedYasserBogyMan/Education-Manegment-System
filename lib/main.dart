@@ -8,6 +8,7 @@ import 'package:school/screen/layout_screen/cubit/layout_cubit.dart';
 import 'package:school/screen/layout_screen/layout_screen.dart';
 import 'package:school/screen/login/cubit/login_cubit.dart';
 import 'package:school/screen/login/login_screen.dart';
+import 'package:school/screen/register/Screens/tesy.dart';
 import 'package:school/screen/register/cubit/register_cubit.dart';
 import 'package:school/screen/schedules/cubit/schedules_cubit.dart';
 import 'package:school/shared/color.dart';
@@ -50,16 +51,16 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key,}) : super(key: key);
+  const MyHomePage({
+    Key? key,
+  }) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   final _drawerController = ZoomDrawerController();
 
   @override

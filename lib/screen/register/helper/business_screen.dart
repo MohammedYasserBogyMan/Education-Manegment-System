@@ -1,10 +1,8 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-
 
 import '../../../shared/components.dart';
 import '../../../shared/toust.dart';
@@ -30,7 +28,7 @@ class BusinessScreen extends StatelessWidget {
                 textController: cubit.businessNameController,
                 validator: (name) => Validator.validateName(name!),
                 inputType: TextInputType.name,
-                prefixIcon:  Icon(IconlyBroken.user3),
+                prefixIcon: Icon(IconlyBroken.user3),
                 hintText: "student's guardian",
               ),
               SizedBox(height: 8.h),
@@ -49,7 +47,7 @@ class BusinessScreen extends StatelessWidget {
                     password!, cubit.businessPasswordController.text),
                 inputType: TextInputType.text,
                 isPassword: true,
-                prefixIcon:Icon(IconlyBroken.password),
+                prefixIcon: Icon(IconlyBroken.password),
                 hintText: "Confirm Password",
               ),
               SizedBox(height: 8.h),
@@ -67,30 +65,19 @@ class BusinessScreen extends StatelessWidget {
                 validator: (cr) => Validator.validateCRNumber(cr!),
                 inputType: TextInputType.number,
                 isPassword: false,
-                prefixIcon:  Icon(IconlyBroken.addUser),
+                prefixIcon: Icon(IconlyBroken.addUser),
                 hintText: "student ID",
               ),
               SizedBox(height: 8.h),
-
-
-
-
-
-
               CustomTextFormField(
                 textController: cubit.businessPhoneController,
                 validator: (phone) => Validator.validatePhone(phone!),
                 inputType: TextInputType.phone,
-                prefixIcon:  Icon(IconlyBroken.call),
+                prefixIcon: Icon(IconlyBroken.call),
                 hintText: "Mobile Number",
                 maxNumber: 11,
               ),
               SizedBox(height: 8.h),
-
-
-
-
-
               MusterButton(
                   isActive:
                       state is SendBusinessSignInLoadingState ? false : true,
@@ -109,7 +96,7 @@ class BusinessScreen extends StatelessWidget {
                             .showToast(context);
                       } else if (cubit.attachmentID == null) {
                         ToastWidget(
-                            message: "please select Attachment ID",
+                                message: "please select Attachment ID",
                                 color: Colors.red.shade300)
                             .showToast(context);
                       }

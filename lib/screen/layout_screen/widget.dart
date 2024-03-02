@@ -122,7 +122,7 @@ class ImageText extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: 160.w,
+                      width: 140.w,
                     ),
                     Image.asset(
                       'assets/images/Icons.arrow_downward.png',
