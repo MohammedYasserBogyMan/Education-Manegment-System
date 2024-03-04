@@ -12,8 +12,8 @@ class AllScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.33,
+    return Expanded(
+      // height: MediaQuery.of(context).size.height * 0.33,
       child: ListView.separated(
           itemBuilder: (context, index) {
             return BlocConsumer<ExamsCubit, ExamsState>(

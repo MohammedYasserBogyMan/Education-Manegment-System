@@ -12,8 +12,8 @@ class DoneScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.33,
+    return Expanded(
+      // height: MediaQuery.of(context).size.height * 0.33,
       child: ListView.separated(
           itemBuilder: (context, index) {
             return BlocConsumer<ExamsCubit, ExamsState>(
@@ -54,8 +54,8 @@ class DoneScreen extends StatelessWidget {
                                       fontSize: 8.sp),
                                 ),
                               ),
-                              Spacer(),
-                              Icon(
+                              const Spacer(),
+                              const Icon(
                                 Icons.more_vert,
                                 size: 18,
                                 color: Colors.white,
@@ -75,24 +75,24 @@ class DoneScreen extends StatelessWidget {
                           SizedBox(
                             height: 10.h,
                           ),
-                          Spacer(),
+                          const Spacer(),
                           Row(
                             children: [
-                              ConDetiales(
+                              const ConDetiales(
                                 title: 'Create by',
                                 details: 'Teacher Name',
                               ),
                               SizedBox(
                                 width: 20.w,
                               ),
-                              ConDetiales(
+                              const ConDetiales(
                                 title: 'Exam Name',
                                 details: 'English',
                               ),
                               SizedBox(
                                 width: 20.w,
                               ),
-                              ConDetiales(
+                              const ConDetiales(
                                 title: 'Duration',
                                 details: '30 minite',
                                 icon: FluentIcons.access_time_24_regular,

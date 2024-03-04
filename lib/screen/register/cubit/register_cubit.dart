@@ -1,5 +1,6 @@
-import 'dart:io';
+// ignore_for_file: unused_catch_clause
 
+import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +8,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
-
 
 part 'register_state.dart';
 
@@ -17,7 +17,6 @@ class RegisterCubit extends Cubit<RegisterState> {
   static RegisterCubit get(context) => BlocProvider.of(context);
 
   late String errorMessage;
-
 
   bool isIndividual = true;
 
@@ -53,14 +52,6 @@ class RegisterCubit extends Cubit<RegisterState> {
     }
   }
 
-
-
-
-
-
-
-
-
   TimeOfDay timeNow = TimeOfDay.now();
 
   Future<void> displayDateIndividualPicker(BuildContext context) async {
@@ -75,8 +66,6 @@ class RegisterCubit extends Cubit<RegisterState> {
     }
     emit(DatePikerState());
   }
-
-
 
 // business side
   TextEditingController businessNameController = TextEditingController();
@@ -140,6 +129,4 @@ class RegisterCubit extends Cubit<RegisterState> {
       }
     }
   }
-
-
 }

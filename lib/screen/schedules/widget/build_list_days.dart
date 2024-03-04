@@ -1,12 +1,14 @@
-
 import 'package:flutter/material.dart';
 
-Widget buildListOfDays({required Color colorBack, required Color colorText,required String titel
-,required void Function()? onPressed,
+Widget buildListOfDays({
+  required Color colorBack,
+  required Color colorText,
+  required String titel,
+  required void Function()? onPressed,
 }) {
-  return   ElevatedButton(
+  return ElevatedButton(
     style: ElevatedButton.styleFrom(
-      fixedSize: const Size(80, 40),
+      fixedSize: const Size(85, 30),
       backgroundColor: colorBack, // Set background color
       foregroundColor: colorText, // Set text color
       shape: const RoundedRectangleBorder(
@@ -15,7 +17,10 @@ Widget buildListOfDays({required Color colorBack, required Color colorText,requi
         ), // Set border radius
       ),
     ),
-    onPressed:onPressed,
-    child: Text(titel,style: TextStyle(fontSize: 13),), // corrected variable name
+    onPressed: onPressed,
+    child: Text(
+      titel,
+      style: const TextStyle(fontSize: 13),
+    ), // corrected variable name
   );
 }

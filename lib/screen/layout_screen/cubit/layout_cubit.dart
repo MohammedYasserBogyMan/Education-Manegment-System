@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:school/screen/assignments/assignments_screen.dart';
+import 'package:school/screen/statistics/statistics_screen.dart';
 
 import '../../exams/exams.dart';
 import '../../home_/home_screen.dart';
-import '../../profile/profile_screen.dart';
 import '../../schedules/schedules_page.dart';
 import '../../attendans/statistics_screen.dart';
 
@@ -17,10 +18,10 @@ class LayoutCubit extends Cubit<HomeState> {
   List<Widget> screen = [
     HomeScreen(),
     SchedulesPage(),
-    //DashBoardScreen(),
     AttendancePage(),
     ExamsScreen(),
-    ProfileScreen(),
+    StatisticsScreen(),
+    AssignmentsScreen(),
   ];
 
   void changeIndex(int index) {

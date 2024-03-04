@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,7 +10,6 @@ import 'package:school/screen/layout_screen/cubit/layout_cubit.dart';
 import 'package:school/screen/layout_screen/layout_screen.dart';
 import 'package:school/screen/login/cubit/login_cubit.dart';
 import 'package:school/screen/login/login_screen.dart';
-import 'package:school/screen/register/Screens/tesy.dart';
 import 'package:school/screen/register/cubit/register_cubit.dart';
 import 'package:school/screen/schedules/cubit/schedules_cubit.dart';
 import 'package:school/shared/color.dart';
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
             scaffoldBackgroundColor: AppColors.colorBackGroundApp,
             primarySwatch: Colors.purple,
           ),
-          home: LogInScreen(),
+          home: const LogInScreen(),
         ),
       ),
     );

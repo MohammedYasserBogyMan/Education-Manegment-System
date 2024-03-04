@@ -1,4 +1,4 @@
-// ignore_for_file: unused_local_variable
+// ignore_for_file: unused_local_variable, camel_case_types
 
 import 'package:flutter/material.dart';
 import 'package:flutter_stepindicator/flutter_stepindicator.dart';
@@ -18,7 +18,7 @@ class Register_Page extends StatelessWidget {
     return BlocBuilder<RegisterCubit, RegisterState>(
       builder: (context, state) {
         var cubit = RegisterCubit.get(context);
-        return Scaffold(
+        return const Scaffold(
           body: MainPage(),
         );
       },
@@ -43,7 +43,7 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       backgroundColor: AppColors.colorBackGroundApp,
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Student Registrition',
           style: TextStyle(color: Colors.grey),
         ),
@@ -54,7 +54,7 @@ class _MainPageState extends State<MainPage> {
         child: Column(
           children: [
             _example1(),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             Center(
@@ -86,7 +86,7 @@ class _MainPageState extends State<MainPage> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 5),
       child: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             // color: Theme.of(context).colorScheme.inversePrimary.withOpacity(0.0),
             ),
         child: Column(
@@ -104,8 +104,8 @@ class _MainPageState extends State<MainPage> {
                 child: FlutterStepIndicator(
                   height: 28,
                   paddingLine: const EdgeInsets.symmetric(horizontal: 0),
-                  positiveColor: Color.fromARGB(255, 17, 101, 246),
-                  progressColor: Color.fromARGB(255, 81, 169, 213),
+                  positiveColor: const Color.fromARGB(255, 17, 101, 246),
+                  progressColor: const Color.fromARGB(255, 81, 169, 213),
                   negativeColor: const Color(0xFFD5D5D5),
                   padding: const EdgeInsets.all(4),
                   list: List.generate(counter, (index) => index),
@@ -115,7 +115,7 @@ class _MainPageState extends State<MainPage> {
                   onClickItem: (p0) {
                     _pageController.animateToPage(
                       p0,
-                      duration: Duration(milliseconds: 500),
+                      duration: const Duration(milliseconds: 500),
                       curve: Curves.easeInOut,
                     );
                   },

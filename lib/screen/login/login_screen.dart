@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
@@ -10,6 +12,7 @@ import '../../../shared/nav.dart';
 import '../../shared/color.dart';
 import '../../shared/components.dart';
 import '../../shared/validator.dart';
+// ignore: unused_import
 import '../register/register_screen.dart';
 import 'cubit/login_cubit.dart';
 
@@ -48,10 +51,10 @@ class _LogInScreenState extends State<LogInScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const SizedBox(
-                    height: 15,
+                    height: 8,
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 12),
+                    padding: const EdgeInsets.only(left: 8),
                     child: Center(
                       child: Text(
                         "Welcome back to \nSMS",
@@ -63,7 +66,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     ),
                   ),
                   SizedBox(
-                    height: 6.h,
+                    height: 2.h,
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 16),
@@ -136,7 +139,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     ],
                   ),
                   const SizedBox(
-                    height: 90,
+                    height: 50,
                   ),
                   Center(
                     child: Row(
@@ -164,7 +167,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     ),
                   ),
                   const SizedBox(
-                    height: 15,
+                    height: 10,
                   ),
                   MusterButton(
                     isActive: state is LoginLoadingState ? false : true,

@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors, library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:school/screen/attendans/widget.dart';
@@ -34,12 +36,12 @@ class _AttendancePageState extends State<AttendancePage> {
               headerStyle: HeaderStyle(
                 titleTextStyle: TextStyle(color: Colors.white, fontSize: 24.sp),
                 formatButtonVisible: false,
-                leftChevronIcon: Icon(
+                leftChevronIcon: const Icon(
                   Icons.arrow_left,
                   color: Colors.white,
                   size: 30,
                 ),
-                rightChevronIcon: Icon(
+                rightChevronIcon: const Icon(
                   Icons.arrow_right,
                   color: Colors.white,
                   size: 30,
@@ -47,8 +49,8 @@ class _AttendancePageState extends State<AttendancePage> {
               ),
               selectedDayPredicate: isDaySelected,
               calendarStyle: CalendarStyle(
-                defaultTextStyle: TextStyle(color: Colors.white),
-                todayTextStyle: TextStyle(color: Colors.green),
+                defaultTextStyle: const TextStyle(color: Colors.white),
+                todayTextStyle: const TextStyle(color: Colors.green),
                 selectedDecoration: BoxDecoration(
                   shape: BoxShape.rectangle,
                   color: isDaySelected(DateTime.now())

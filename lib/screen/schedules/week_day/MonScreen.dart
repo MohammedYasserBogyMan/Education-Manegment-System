@@ -9,7 +9,6 @@ import '../widget/build_list_subject.dart';
 class MonScreen extends StatelessWidget {
   const MonScreen({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<SchedulesCubit, SchedulesState>(
@@ -17,10 +16,9 @@ class MonScreen extends StatelessWidget {
         // TODO: implement listener
       },
       builder: (context, state) {
-        final cubit=SchedulesCubit.get(context);
+        final cubit = SchedulesCubit.get(context);
         return Column(
           children: [
-
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.58,
               child: ListView.builder(

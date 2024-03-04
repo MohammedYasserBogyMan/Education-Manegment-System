@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           child: BlocConsumer<HomeCubit, HomeState>(
             listener: (context, state) {
               // TODO: implement listener
@@ -27,14 +27,14 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Text(
+                      const Text(
                         "Good\nmornning",
                         style: TextStyle(
                             fontSize: 40,
                             fontWeight: FontWeight.bold,
                             color: Colors.white),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Image.asset(
                         'assets/images/smila.png',
                         height: 60.h,
@@ -42,7 +42,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 8,
                   ),
                   Container(
@@ -59,7 +59,7 @@ class HomeScreen extends StatelessWidget {
                         SizedBox(
                           width: 20.w,
                         ),
-                        Column(
+                        const Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
@@ -125,7 +125,7 @@ class HomeScreen extends StatelessWidget {
 
                       itemCount: 3, // Adjust the number of items as needed
                       itemBuilder: (context, index) {
-                        return details(); // Assuming details() returns a Widget
+                        return const details(); // Assuming details() returns a Widget
                       },
                       // Adjust the item extent as needed
                     ),
@@ -135,7 +135,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.date_range,
                         color: Colors.white,
                       ),
@@ -149,7 +149,7 @@ class HomeScreen extends StatelessWidget {
                           fontSize: 20,
                         ),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10.r),
@@ -175,7 +175,7 @@ class HomeScreen extends StatelessWidget {
                     height: 200.h,
                     child: ListView.separated(
                         itemBuilder: (context, index) {
-                          return ImageText();
+                          return const ImageText();
                         },
                         separatorBuilder: (context, index) {
                           return SizedBox(height: 5.h);

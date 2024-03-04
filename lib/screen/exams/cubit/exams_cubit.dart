@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:school/screen/exams/widget/all_screen.dart';
@@ -13,7 +15,7 @@ class ExamsCubit extends Cubit<ExamsState> {
   static ExamsCubit get(context) => BlocProvider.of(context);
   final SearchController = TextEditingController();
   int initialActive = 1;
-  Widget isActiveScreen = AllScreen();
+  Widget isActiveScreen = const AllScreen();
   List<Widget> Screens = [
     const AllScreen(),
     const ToDoScreen(),

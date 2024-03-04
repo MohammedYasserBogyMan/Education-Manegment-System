@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_typing_uninitialized_variables, deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
@@ -73,7 +75,9 @@ class LayoutScreen extends StatelessWidget {
               BottomNavigationBarItem(
                   icon: FaIcon(FontAwesomeIcons.file), label: 'Exams'),
               BottomNavigationBarItem(
-                  icon: FaIcon(FontAwesomeIcons.user), label: 'Profile'),
+                  icon: FaIcon(FontAwesomeIcons.chartColumn), label: 'Statics'),
+              BottomNavigationBarItem(
+                  icon: FaIcon(FontAwesomeIcons.book), label: 'Assiments'),
             ],
           ),
           floatingActionButtonLocation:
@@ -100,8 +104,8 @@ Widget overlapped() {
           shape: BoxShape.circle,
         ),
         child: CircleAvatar(
-            child: Image.asset('assets/icons/1.png'),
-            backgroundColor: Colors.red)),
+            backgroundColor: Colors.red,
+            child: Image.asset('assets/icons/1.png'))),
     Container(
         padding: const EdgeInsets.all(2.0),
         decoration: const BoxDecoration(
@@ -109,8 +113,8 @@ Widget overlapped() {
           shape: BoxShape.circle,
         ),
         child: CircleAvatar(
-            child: Image.asset('assets/icons/2.png'),
-            backgroundColor: Colors.green)),
+            backgroundColor: Colors.green,
+            child: Image.asset('assets/icons/2.png'))),
     Container(
         padding: const EdgeInsets.all(2.0),
         decoration: const BoxDecoration(
@@ -118,8 +122,8 @@ Widget overlapped() {
           shape: BoxShape.circle,
         ),
         child: CircleAvatar(
-            child: Image.asset('assets/icons/3.png'),
-            backgroundColor: Colors.blue)),
+            backgroundColor: Colors.blue,
+            child: Image.asset('assets/icons/3.png'))),
     Container(
         padding: const EdgeInsets.all(2.0),
         decoration: const BoxDecoration(
@@ -127,8 +131,8 @@ Widget overlapped() {
           shape: BoxShape.circle,
         ),
         child: CircleAvatar(
-            child: Image.asset('assets/icons/6.png'),
-            backgroundColor: Colors.blue)),
+            backgroundColor: Colors.blue,
+            child: Image.asset('assets/icons/6.png'))),
     Container(
         padding: const EdgeInsets.all(2.0),
         decoration: const BoxDecoration(
@@ -136,11 +140,11 @@ Widget overlapped() {
           shape: BoxShape.circle,
         ),
         child: CircleAvatar(
+            backgroundColor: Colors.purple[100],
             child: Text(
               '9',
               style: TextStyle(color: Colors.grey[600], fontSize: 20),
-            ),
-            backgroundColor: Colors.purple[100])),
+            ))),
   ];
 
   List<Widget> stackLayers = List<Widget>.generate(items.length, (index) {
