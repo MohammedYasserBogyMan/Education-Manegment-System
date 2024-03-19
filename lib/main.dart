@@ -13,6 +13,7 @@ import 'package:school/screen/login/login_screen.dart';
 import 'package:school/screen/register/cubit/register_cubit.dart';
 import 'package:school/screen/schedules/cubit/schedules_cubit.dart';
 import 'package:school/shared/color.dart';
+import 'package:school/test.dart';
 
 import 'screen/menu_screen/menu.dart';
 
@@ -45,7 +46,7 @@ class MyApp extends StatelessWidget {
             scaffoldBackgroundColor: AppColors.colorBackGroundApp,
             primarySwatch: Colors.purple,
           ),
-          home: const LogInScreen(),
+          home:  test(),
         ),
       ),
     );
