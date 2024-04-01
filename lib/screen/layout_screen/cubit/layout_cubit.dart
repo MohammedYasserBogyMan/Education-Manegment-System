@@ -23,12 +23,24 @@ class LayoutCubit extends Cubit<HomeState> {
     StatisticsScreen(),
     AssignmentsScreen(),
   ];
+  int currenttitle=0;
+  List<String> title=[
+    '',
+    'Schedule',
+    'Attendance',
+    'Exams',
+    'Statistics',
+    'Assignments',
+
+  ];
+
 
   void changeIndex(int index) {
     // if (index == 2) {
     //   return null;
     // }
     current = index;
+    currenttitle=index;
     emit(AppChangeBottomNavBarState());
   }
 }

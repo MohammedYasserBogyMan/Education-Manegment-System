@@ -24,10 +24,7 @@ class StatisticsScreen extends StatelessWidget {
       backgroundColor: AppColors.colorBackGroundApp,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        title: const Text(
-          'Statistics',
-          style: TextStyle(color: Colors.white, fontSize: 18),
-        ),
+
         centerTitle: true,
       ),
       body: Padding(

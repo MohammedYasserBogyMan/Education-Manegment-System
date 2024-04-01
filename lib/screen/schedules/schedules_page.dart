@@ -15,14 +15,6 @@ class SchedulesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.colorBackGroundApp,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        title: const Text(
-          'Schedule',
-          style: TextStyle(color: Colors.white, fontSize: 18),
-        ),
-        centerTitle: true,
-      ),
       body: BlocConsumer<SchedulesCubit, SchedulesState>(
         listener: (context, state) {
           // TODO: implement listener

@@ -24,6 +24,10 @@ class LayoutScreen extends StatelessWidget {
         final cubit = LayoutCubit.get(context);
         return Scaffold(
           appBar: AppBar(
+            centerTitle: true,
+            title: Text(cubit.title[cubit.currenttitle]
+               , style: TextStyle(color: Colors.white, fontSize: 18),
+            ),
             elevation: 0,
             backgroundColor: AppColors.colorBackGroundApp,
             leading: Padding(

@@ -17,10 +17,7 @@ class ExamsScreen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.transparent,
-          title: const Text(
-            'Exams',
-            style: TextStyle(color: Colors.white, fontSize: 18),
-          ),
+
           centerTitle: true,
         ),
         body: BlocConsumer<ExamsCubit, ExamsState>(
