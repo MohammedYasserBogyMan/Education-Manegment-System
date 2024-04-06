@@ -3,6 +3,7 @@ import 'package:school/main.dart';
 import 'package:school/screen/profile/profile_screen.dart';
 
 import '../../shared/color.dart';
+import 'about_screen.dart';
 
 class MenuScreen extends StatelessWidget {
   const MenuScreen({Key? key}) : super(key: key);
@@ -101,10 +102,17 @@ class MenuScreen extends StatelessWidget {
                       color: Colors.white, fontWeight: FontWeight.w600)),
             ),
             ListTile(
-              title: const Text("Assignment",
-                  style: TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.w600)),
-              onTap: () {},
+              title: const Text(
+                "About",
+                style:
+                    TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
+              ),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const AboutScreen()));
+              },
             ),
             ListTile(
               title: const Text("Grades",

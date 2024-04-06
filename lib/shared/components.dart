@@ -41,7 +41,96 @@ class MusterButton extends StatelessWidget {
     );
   }
 }
+class RowTypePeer extends StatelessWidget {
+  const RowTypePeer({super.key,
+    required this.onPressedBuyer,
+    required this.onPressedSeller,
+    required this.buyer,
+    required this.isSeller,
+    required this.seller});
 
+  final void Function() onPressedBuyer;
+  final void Function() onPressedSeller;
+  final bool isSeller;
+  final String buyer;
+  final String seller;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 60.h,
+      width:170,
+      decoration: BoxDecoration(
+          color: Colors.transparent,
+          border: Border.all(color: AppColors.colorBorderBack),
+          borderRadius: BorderRadius.all(Radius.circular(12.r))),
+      padding: EdgeInsetsDirectional.all(5.sp),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Expanded(
+            child: MaterialButton(
+              onPressed: onPressedSeller,
+              elevation: 0,
+              hoverElevation: 0,
+              highlightElevation: 0,
+              focusElevation: 0,
+              highlightColor: Colors.transparent,
+              splashColor: Colors.transparent,
+              height: 60.h,
+              color: isSeller == true
+                  ? AppColors.colorWhite
+                  : Colors.transparent,
+              shape: OutlineInputBorder(
+                borderSide: BorderSide(style: BorderStyle.none),
+                borderRadius: BorderRadius.all(Radius.circular(10.r)),
+              ),
+              child: Text(
+                seller,
+                style: TextStyle(
+                  color: isSeller == true
+                      ? AppColors.colorBlack
+                      : AppColors.colorWhite,
+                  fontSize: 10.sp,
+                ),
+              ),
+            ),
+          ),
+          Expanded(
+            child: MaterialButton(
+              onPressed: onPressedBuyer,
+              elevation: 0,
+              hoverElevation: 0,
+              highlightElevation: 0,
+              focusElevation: 0,
+              highlightColor: Colors.transparent,
+              splashColor: Colors.transparent,
+              height: 60.h,
+              color: isSeller == false
+                  ? AppColors.colorWhite
+                  : Colors.transparent,
+              shape: OutlineInputBorder(
+                borderSide: BorderSide(style: BorderStyle.none),
+                borderRadius: BorderRadius.all(Radius.circular(10.r)),
+              ),
+              child: Text(
+                buyer,
+                maxLines: 1,
+                style: TextStyle(
+                  color: isSeller == false
+                      ? AppColors.colorBlack
+                      : AppColors.colorWhite,
+                  fontWeight: FontWeight.normal,
+                  fontSize: 12.sp,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
 class CustomTile extends StatelessWidget {
   const CustomTile({
     super.key,

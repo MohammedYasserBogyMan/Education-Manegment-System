@@ -6,8 +6,10 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:school/shared/nav.dart';
 import '../../shared/color.dart';
 import 'cubit/layout_cubit.dart';
+import 'notification_screen.dart';
 
 class LayoutScreen extends StatelessWidget {
   final zoomController;
@@ -48,7 +50,9 @@ class LayoutScreen extends StatelessWidget {
             ),
             actions: [
               GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    navigateTo(context, NotificationScreen());
+                  },
                   child: SvgPicture.asset(
                     'assets/icons/notification_.svg',
                     height: 35.h,

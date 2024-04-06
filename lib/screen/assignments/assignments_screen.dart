@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:school/screen/exams/cubit/exams_cubit.dart';
+import 'package:school/shared/components.dart';
 
 import '../../shared/color.dart';
 import '../schedules/widget/build_list_days.dart';
@@ -14,7 +15,6 @@ class AssignmentsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-
         centerTitle: true,
       ),
       body: BlocConsumer<ExamsCubit, ExamsState>(
@@ -30,14 +30,22 @@ class AssignmentsScreen extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
-                const Center(
-                  child: Text(
-                    'Stay organized with your upcoming and\n             completed assignments',
-                    style: TextStyle(
-                      color: Colors.grey,
-                    ),
-                  ),
-                ),
+                RowTypePeer(
+                    onPressedBuyer: () {
+                      if (cubit.isSeller == false) {
+                      } else {
+                        cubit.changeSeller();
+                      }
+                    },
+                    onPressedSeller: () {
+                      if (cubit.isSeller == true) {
+                      } else {
+                        cubit.changeSeller();
+                      }
+                    },
+                    buyer: 'Group',
+                    isSeller: cubit.isSeller,
+                    seller: 'Personal'),
                 const SizedBox(
                   height: 40,
                 ),

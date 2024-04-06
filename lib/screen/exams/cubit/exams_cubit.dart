@@ -21,6 +21,13 @@ class ExamsCubit extends Cubit<ExamsState> {
     const ToDoScreen(),
     const DoneScreen(),
   ];
+
+  bool isSeller = true;
+
+  void changeSeller() {
+    isSeller = !isSeller;
+    emit(ChangeSellerState());
+  }
   List<Color> colorListAll = [
     Colors.red,
     Colors.blue,
