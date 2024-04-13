@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
+import 'package:school/page/balance_screen.dart';
 import 'package:school/screen/exams/cubit/exams_cubit.dart';
 import 'package:school/screen/home_/cubit/layout_cubit.dart';
 import 'package:school/screen/layout_screen/cubit/layout_cubit.dart';
@@ -13,7 +14,7 @@ import 'package:school/screen/login/login_screen.dart';
 import 'package:school/screen/register/cubit/register_cubit.dart';
 import 'package:school/screen/schedules/cubit/schedules_cubit.dart';
 import 'package:school/shared/color.dart';
-import 'package:school/test.dart';
+import 'package:school/live_collateral.dart';
 
 import 'screen/menu_screen/menu.dart';
 

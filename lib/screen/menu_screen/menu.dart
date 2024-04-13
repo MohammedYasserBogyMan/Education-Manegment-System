@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:school/main.dart';
 import 'package:school/screen/profile/profile_screen.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../shared/color.dart';
 import 'about_screen.dart';
@@ -118,7 +119,7 @@ class MenuScreen extends StatelessWidget {
               title: const Text("Grades",
                   style: TextStyle(
                       color: Colors.white, fontWeight: FontWeight.w600)),
-              onTap: () {},
+              onTap: _launchURL,
             ),
             const SizedBox(
               height: 20.0,
@@ -139,5 +140,15 @@ class MenuScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _launchURL() async {
+    final url =
+        'https://predgradestudents.streamlit.app'; // يمكنك استبداله برابط آخر
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch$url';
+    }
   }
 }
