@@ -4,21 +4,28 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
-import 'package:school/page/balance_screen.dart';
 import 'package:school/screen/exams/cubit/exams_cubit.dart';
 import 'package:school/screen/home_/cubit/layout_cubit.dart';
 import 'package:school/screen/layout_screen/cubit/layout_cubit.dart';
 import 'package:school/screen/layout_screen/layout_screen.dart';
 import 'package:school/screen/login/cubit/login_cubit.dart';
 import 'package:school/screen/login/login_screen.dart';
+import 'package:school/screen/register/Screens/main_register.dart';
+import 'package:school/screen/register/Screens/tesy.dart';
 import 'package:school/screen/register/cubit/register_cubit.dart';
+import 'package:school/screen/register/register_screen.dart';
 import 'package:school/screen/schedules/cubit/schedules_cubit.dart';
 import 'package:school/shared/color.dart';
-import 'package:school/live_collateral.dart';
 
+
+import 'local_storage/shared_preferences_manager.dart';
+import 'network/bloc_observer.dart';
 import 'screen/menu_screen/menu.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await PrefsManager.init();
+  Bloc.observer = MyBlocObserver();
   runApp(const MyApp());
 }
 
@@ -47,7 +54,7 @@ class MyApp extends StatelessWidget {
             scaffoldBackgroundColor: AppColors.colorBackGroundApp,
             primarySwatch: Colors.purple,
           ),
-          home:  MyHomePage(),
+          home:  LogInScreen(),
         ),
       ),
     );

@@ -32,6 +32,7 @@ class _LogInScreenState extends State<LogInScreen> {
     return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {},
       builder: (context, state) {
+        final cubit=LoginCubit.get(context);
         return Scaffold(
           backgroundColor: AppColors.colorBackGroundApp,
           resizeToAvoidBottomInset: false,
@@ -43,120 +44,159 @@ class _LogInScreenState extends State<LogInScreen> {
               style: TextStyle(fontSize: 20.sp, color: AppColors.colorWhite),
             ),
           ),
-          body: Form(
-            key: _formKey,
-            child: Padding(
-              padding: const EdgeInsets.all(45),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8),
-                    child: Center(
-                      child: Text(
-                        "Welcome back to \nSMS",
-                        style: TextStyle(
-                            fontSize: 35.sp,
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.colorWhite),
-                      ),
+          body: SingleChildScrollView(
+            child: Form(
+              key: _formKey,
+              child: Padding(
+                padding: const EdgeInsets.all(45),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const SizedBox(
+                      height: 8,
                     ),
-                  ),
-                  SizedBox(
-                    height: 2.h,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 16),
-                    child: Text(
-                      "Empowering minds,\ninspiring Futures",
-                      style: TextStyle(
-                          fontSize: 20.sp, color: AppColors.colorWhite),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 45.h,
-                  ),
-                  CustomTextFormField(
-                    maxNumber: 11,
-                    textController: LoginCubit.get(context).phoneController,
-                    validator: (phone) => Validator.validatePhone(phone!),
-                    inputType: TextInputType.phone,
-                    prefixIcon: Icon(
-                      IconlyBroken.addUser,
-                      color: AppColors.colorGrey,
-                    ),
-                    hintText: "Enter your student ID or Email",
-                  ),
-                  SizedBox(
-                    height: 16.h,
-                  ),
-                  CustomTextFormField(
-                    textController: LoginCubit.get(context).passwordController,
-                    validator: (password) =>
-                        Validator.validatePassword(password!),
-                    inputType: TextInputType.visiblePassword,
-                    isPassword: LoginCubit.get(context).isPasswordLogin,
-                    suffixIcon: IconButton(
-                      onPressed: () {
-                        LoginCubit.get(context).changePasswordLoginVisible();
-                      },
-                      icon: Icon(
-                        LoginCubit.get(context).isPasswordLogin
-                            ? Icons.visibility
-                            : Icons.visibility_off,
-                        color: Colors.grey,
-                      ),
-                    ),
-                    prefixIcon: SvgPicture.asset(
-                      "assets/icons/Lock_icon.svg",
-                      color: AppColors.colorGrey,
-                      semanticsLabel: 'lock_icon',
-                      height: 22.h,
-                      width: 16.w,
-                    ),
-                    hintText: "Password",
-                  ),
-                  SizedBox(
-                    height: 35.h,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      customCheekBox(),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        'Remember me on this devic',
-                        style: TextStyle(
-                          fontSize: 15.sp,
-                          color: AppColors.colorWhite,
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8),
+                      child: Center(
+                        child: Text(
+                          "Welcome back to \nSMS",
+                          style: TextStyle(
+                              fontSize: 35.sp,
+                              fontWeight: FontWeight.bold,
+                              color: AppColors.colorWhite),
                         ),
-                      )
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 50,
-                  ),
-                  Center(
-                    child: Row(
+                      ),
+                    ),
+                    SizedBox(
+                      height: 2.h,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 16),
+                      child: Text(
+                        "Empowering minds,\ninspiring Futures",
+                        style: TextStyle(
+                            fontSize: 20.sp, color: AppColors.colorWhite),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 45.h,
+                    ),
+                    CustomTextFormField(
+
+                      textController: LoginCubit.get(context).phoneController,
+                      validator: (email) => Validator.validateAddress(email!),
+                      inputType: TextInputType.emailAddress,
+                      prefixIcon: Icon(
+                        IconlyBroken.addUser,
+                        color: AppColors.colorGrey,
+                      ),
+                      hintText: "Enter your student ID or Email",
+                    ),
+                    SizedBox(
+                      height: 16.h,
+                    ),
+                    CustomTextFormField(
+                      textController: LoginCubit.get(context).passwordController,
+                      validator: (password) =>
+                          Validator.validatePassword(password!),
+                      inputType: TextInputType.visiblePassword,
+                      isPassword: LoginCubit.get(context).isPasswordLogin,
+                      suffixIcon: IconButton(
+                        onPressed: () {
+                          LoginCubit.get(context).changePasswordLoginVisible();
+                        },
+                        icon: Icon(
+                          LoginCubit.get(context).isPasswordLogin
+                              ? Icons.visibility
+                              : Icons.visibility_off,
+                          color: Colors.grey,
+                        ),
+                      ),
+                      prefixIcon: SvgPicture.asset(
+                        "assets/icons/Lock_icon.svg",
+                        color: AppColors.colorGrey,
+                        semanticsLabel: 'lock_icon',
+                        height: 22.h,
+                        width: 16.w,
+                      ),
+                      hintText: "Password",
+                    ),
+                    SizedBox(
+                      height: 35.h,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        customCheekBox(),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          'Remember me on this devic',
+                          style: TextStyle(
+                            fontSize: 15.sp,
+                            color: AppColors.colorWhite,
+                          ),
+                        )
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 50,
+                    ),
+                    Center(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Don't Have an account?",
+                            style: TextStyle(
+                                fontSize: 15.sp,
+                                color: AppColors.colorLightGreen),
+                          ),
+                          const SizedBox(width: 5),
+                          GestureDetector(
+                            onTap: () => navigateTo(context,
+                                const Register_Page()), // شيلت الصفحه القديمه وحطيت الجديده
+                            child: Text(
+                              'Register here.',
+                              style: TextStyle(
+                                  fontSize: 15.sp,
+                                  color: AppColors.colorWhite,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    MusterButton(
+                      isActive: state is LoginLoadingState ? false : true,
+                      onTap: () {
+                        if (_formKey.currentState!.validate()) {
+                         cubit. userLogin();
+                         // navigateFinish(context, const MyHomePage());
+                        }
+                      },
+                      title: "Sign in",
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "Don't Have an account?",
+                          "Forgot your password? ",
                           style: TextStyle(
-                              fontSize: 15.sp,
-                              color: AppColors.colorLightGreen),
+                              fontSize: 15.sp, color: AppColors.colorLightGreen),
                         ),
-                        const SizedBox(width: 5),
                         GestureDetector(
-                          onTap: () => navigateTo(context,
-                              const Register_Page()), // شيلت الصفحه القديمه وحطيت الجديده
+                          onTap: () {},
+                          //navigateTo(context, ForgotPasswordScreen()),
                           child: Text(
-                            'Register here.',
+                            "Reset Now.",
                             style: TextStyle(
                                 fontSize: 15.sp,
                                 color: AppColors.colorWhite,
@@ -165,44 +205,8 @@ class _LogInScreenState extends State<LogInScreen> {
                         ),
                       ],
                     ),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  MusterButton(
-                    isActive: state is LoginLoadingState ? false : true,
-                    onTap: () {
-                      if (_formKey.currentState!.validate()) {
-                        navigateFinish(context, const MyHomePage());
-                      }
-                    },
-                    title: "Sign in",
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Forgot your password? ",
-                        style: TextStyle(
-                            fontSize: 15.sp, color: AppColors.colorLightGreen),
-                      ),
-                      GestureDetector(
-                        onTap: () {},
-                        //navigateTo(context, ForgotPasswordScreen()),
-                        child: Text(
-                          "Reset Now.",
-                          style: TextStyle(
-                              fontSize: 15.sp,
-                              color: AppColors.colorWhite,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
