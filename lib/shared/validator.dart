@@ -1,5 +1,3 @@
-
-
 class Validator {
   static String? validateEmail(String mail) {
     if (mail.isEmpty) {
@@ -57,18 +55,12 @@ class Validator {
     if (phone.length != 9) {
       return "phone_number_must_be_9_numbers";
     }
-    if (int.parse(phone) == null) {
-      return "phone_number_must_be_only_numbers";
-    }
     return null;
   }
 
   static String? validateOTP(String otp) {
     if (otp.isEmpty) {
       return "Required";
-    }
-    if (int.parse(otp) == null) {
-      return "otp_number_must_be_only_numbers";
     }
     if (otp.length < 6) {
       return "otp_number_must_be_6_numbers";
@@ -91,7 +83,7 @@ class Validator {
   }
 
   static String? validatePassword(String password) {
-    if (password == null || password.isEmpty) {
+    if (password.isEmpty) {
       return "Required";
     }
     if (password.length < 5) {

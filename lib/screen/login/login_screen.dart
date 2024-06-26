@@ -32,7 +32,7 @@ class _LogInScreenState extends State<LogInScreen> {
     return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {},
       builder: (context, state) {
-        final cubit=LoginCubit.get(context);
+        final cubit = LoginCubit.get(context);
         return Scaffold(
           backgroundColor: AppColors.colorBackGroundApp,
           resizeToAvoidBottomInset: false,
@@ -48,24 +48,34 @@ class _LogInScreenState extends State<LogInScreen> {
             child: Form(
               key: _formKey,
               child: Padding(
-                padding: const EdgeInsets.all(45),
+                padding: const EdgeInsets.all(20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     const SizedBox(
                       height: 8,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 8),
-                      child: Center(
-                        child: Text(
-                          "Welcome back to \nSMS",
-                          style: TextStyle(
+                    Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Image.asset(
+                          'assets/images/login.png',
+                          width: 300.w,
+                          height: 200.h,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 8),
+                          child: Text(
+                            "Welcome back to \nSMS",
+                            style: TextStyle(
                               fontSize: 35.sp,
                               fontWeight: FontWeight.bold,
-                              color: AppColors.colorWhite),
+                              color: Colors
+                                  .white, // استخدم اللون الأبيض للنص ليكون مرئيًا على الخلفية
+                            ),
+                          ),
                         ),
-                      ),
+                      ],
                     ),
                     SizedBox(
                       height: 2.h,
@@ -75,14 +85,15 @@ class _LogInScreenState extends State<LogInScreen> {
                       child: Text(
                         "Empowering minds,\ninspiring Futures",
                         style: TextStyle(
-                            fontSize: 20.sp, color: AppColors.colorWhite),
+                          fontSize: 20.sp,
+                          color: AppColors.colorWhite,
+                        ),
                       ),
                     ),
                     SizedBox(
                       height: 45.h,
                     ),
                     CustomTextFormField(
-
                       textController: LoginCubit.get(context).phoneController,
                       validator: (email) => Validator.validateAddress(email!),
                       inputType: TextInputType.emailAddress,
@@ -96,7 +107,8 @@ class _LogInScreenState extends State<LogInScreen> {
                       height: 16.h,
                     ),
                     CustomTextFormField(
-                      textController: LoginCubit.get(context).passwordController,
+                      textController:
+                          LoginCubit.get(context).passwordController,
                       validator: (password) =>
                           Validator.validatePassword(password!),
                       inputType: TextInputType.visiblePassword,
@@ -132,12 +144,12 @@ class _LogInScreenState extends State<LogInScreen> {
                           width: 10,
                         ),
                         Text(
-                          'Remember me on this devic',
+                          'Remember me on this device',
                           style: TextStyle(
                             fontSize: 15.sp,
                             color: AppColors.colorWhite,
                           ),
-                        )
+                        ),
                       ],
                     ),
                     const SizedBox(
@@ -150,19 +162,23 @@ class _LogInScreenState extends State<LogInScreen> {
                           Text(
                             "Don't Have an account?",
                             style: TextStyle(
-                                fontSize: 15.sp,
-                                color: AppColors.colorLightGreen),
+                              fontSize: 15.sp,
+                              color: AppColors.colorLightGreen,
+                            ),
                           ),
                           const SizedBox(width: 5),
                           GestureDetector(
-                            onTap: () => navigateTo(context,
-                                const Register_Page()), // شيلت الصفحه القديمه وحطيت الجديده
+                            onTap: () => navigateTo(
+                              context,
+                              const Register_Page(),
+                            ), // شيلت الصفحه القديمه وحطيت الجديده
                             child: Text(
                               'Register here.',
                               style: TextStyle(
-                                  fontSize: 15.sp,
-                                  color: AppColors.colorWhite,
-                                  fontWeight: FontWeight.bold),
+                                fontSize: 15.sp,
+                                color: AppColors.colorWhite,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ],
@@ -175,7 +191,7 @@ class _LogInScreenState extends State<LogInScreen> {
                       isActive: state is LoginLoadingState ? false : true,
                       onTap: () {
                         if (_formKey.currentState!.validate()) {
-                       //  cubit. userLogin();
+                          // cubit.userLogin();
                           navigateFinish(context, const MyHomePage());
                         }
                       },
@@ -190,7 +206,9 @@ class _LogInScreenState extends State<LogInScreen> {
                         Text(
                           "Forgot your password? ",
                           style: TextStyle(
-                              fontSize: 15.sp, color: AppColors.colorLightGreen),
+                            fontSize: 15.sp,
+                            color: AppColors.colorLightGreen,
+                          ),
                         ),
                         GestureDetector(
                           onTap: () {},
@@ -198,9 +216,10 @@ class _LogInScreenState extends State<LogInScreen> {
                           child: Text(
                             "Reset Now.",
                             style: TextStyle(
-                                fontSize: 15.sp,
-                                color: AppColors.colorWhite,
-                                fontWeight: FontWeight.bold),
+                              fontSize: 15.sp,
+                              color: AppColors.colorWhite,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ],
@@ -215,7 +234,7 @@ class _LogInScreenState extends State<LogInScreen> {
     );
   }
 
-  customCheekBox() {
+  Widget customCheekBox() {
     return Container(
       height: 25,
       width: 25,

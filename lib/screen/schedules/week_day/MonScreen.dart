@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../shared/color.dart';
 import '../cubit/schedules_cubit.dart';
-import '../widget/build_list_days.dart';
 import '../widget/build_list_subject.dart';
 
 class MonScreen extends StatelessWidget {
