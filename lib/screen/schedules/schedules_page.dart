@@ -3,10 +3,9 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:school/screen/schedules/cubit/schedules_cubit.dart';
 import 'package:school/screen/schedules/widget/build_list_days.dart';
+// ignore: unused_import
 import 'package:school/screen/schedules/widget/build_list_subject.dart';
 import 'package:school/shared/color.dart';
-
-import 'models/item_models.dart';
 
 class SchedulesPage extends StatelessWidget {
   SchedulesPage({super.key});

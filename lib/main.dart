@@ -9,20 +9,19 @@ import 'package:school/screen/home_/cubit/layout_cubit.dart';
 import 'package:school/screen/layout_screen/cubit/layout_cubit.dart';
 import 'package:school/screen/layout_screen/layout_screen.dart';
 import 'package:school/screen/login/cubit/login_cubit.dart';
+// ignore: unused_import
 import 'package:school/screen/login/login_screen.dart';
-import 'package:school/screen/register/Screens/main_register.dart';
-import 'package:school/screen/register/Screens/tesy.dart';
 import 'package:school/screen/register/cubit/register_cubit.dart';
+// ignore: unused_import
 import 'package:school/screen/register/register_screen.dart';
 import 'package:school/screen/schedules/cubit/schedules_cubit.dart';
 import 'package:school/shared/color.dart';
-
 
 import 'local_storage/shared_preferences_manager.dart';
 import 'network/bloc_observer.dart';
 import 'screen/menu_screen/menu.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await PrefsManager.init();
   Bloc.observer = MyBlocObserver();
@@ -54,7 +53,8 @@ class MyApp extends StatelessWidget {
             scaffoldBackgroundColor: AppColors.colorBackGroundApp,
             primarySwatch: Colors.purple,
           ),
-          home:  LogInScreen(),
+          // ignore: prefer_const_constructors
+          home: LogInScreen(),
         ),
       ),
     );

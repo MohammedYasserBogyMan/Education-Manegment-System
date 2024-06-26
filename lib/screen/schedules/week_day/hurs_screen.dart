@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../shared/color.dart';
 import '../cubit/schedules_cubit.dart';
-import '../widget/build_list_days.dart';
 import '../widget/build_list_subject.dart';
 
 class HursScreen extends StatelessWidget {
   const HursScreen({super.key});
-
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +14,9 @@ class HursScreen extends StatelessWidget {
         // TODO: implement listener
       },
       builder: (context, state) {
-        final cubit=SchedulesCubit.get(context);
+        final cubit = SchedulesCubit.get(context);
         return Column(
           children: [
-
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.58,
               child: ListView.builder(
