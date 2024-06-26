@@ -175,8 +175,8 @@ class _LogInScreenState extends State<LogInScreen> {
                       isActive: state is LoginLoadingState ? false : true,
                       onTap: () {
                         if (_formKey.currentState!.validate()) {
-                         cubit. userLogin();
-                         // navigateFinish(context, const MyHomePage());
+                       //  cubit. userLogin();
+                          navigateFinish(context, const MyHomePage());
                         }
                       },
                       title: "Sign in",

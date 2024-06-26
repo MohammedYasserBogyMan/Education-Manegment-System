@@ -94,7 +94,7 @@ class Validator {
     if (password == null || password.isEmpty) {
       return "Required";
     }
-    if (password.length < 8) {
+    if (password.length < 5) {
       return "please_enter_at_least_8_characters_in_password";
     }
     return null;

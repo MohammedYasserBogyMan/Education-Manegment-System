@@ -3,6 +3,12 @@ import 'dart:io';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
+import '../models/error.dart';
+import '../models/error_model_login.dart';
+import '../models/login_model.dart';
+import '../models/new.dart';
+import '../models/new_login.dart';
+import '../models/new_sdsad.dart';
 import '../models/register_model.dart';
 import 'dio_client.dart';
 import 'endpoints.dart';
@@ -10,7 +16,7 @@ import 'endpoints.dart';
 class DioManager {
   DioClient dioClient = DioClient(Dio());
 
-  Future<Either<String, RegisterModel>> sendRegisterAsync(
+  Future<Either<String, NewLogin>> sendRegisterAsync(
       {required String email,
       required String firstname,
       required String lastname,
@@ -19,7 +25,7 @@ class DioManager {
     try {
       Response response = await dioClient.post(
         Endpoints.register,
-        data: {
+        queryParameters: {
           "email": email,
           "first_name": firstname,
           "last_name": lastname,
@@ -28,30 +34,30 @@ class DioManager {
         },
       );
 
-      return Right(RegisterModel.fromJson(response.data));
+      return Right(NewLogin.fromJson(response.data));
     } on DioException catch (e) {
       return Left(
-          RegisterModel.fromJson(e.response!.data).message!.toString());
+          ErrorModel.fromJson(e.response!.data).message!.toString());
     }
   }
-  Future<Either<String, RegisterModel>> sendLoginAsync(
+  Future<Either<String, NewLogin>> sendLoginAsync(
       {required String email,
       required String password,
      }) async {
     try {
       Response response = await dioClient.post(
         Endpoints.login,
-        data: {
+        queryParameters: {
           "email": email,
           "password": password,
 
         },
       );
 
-      return Right(RegisterModel.fromJson(response.data));
+      return Right(NewLogin.fromJson(response.data));
     } on DioException catch (e) {
       return Left(
-          RegisterModel.fromJson(e.response!.data).message!.toString());
+          ErrorModelLogin.fromJson(e.response!.data).message!.toString());
     }
   }
 
