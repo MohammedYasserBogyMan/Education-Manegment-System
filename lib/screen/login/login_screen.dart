@@ -16,7 +16,6 @@ import '../../shared/validator.dart';
 import '../layout_parent_screens/Parent_home_page/parent_home.dart';
 import '../layout_parent_screens/layout_parent.dart';
 import '../register/cubit/register_cubit.dart';
-import '../register/register_screen.dart';
 import 'cubit/login_cubit.dart';
 
 class LogInScreen extends StatefulWidget {
@@ -195,14 +194,12 @@ class _LogInScreenState extends State<LogInScreen> {
                       onTap: () {
                         if (_formKey.currentState!.validate()) {
                           // cubit.userLogin();
-                          if( RegisterCubit.get(context).isIndividual==false){
+                          if (RegisterCubit.get(context).isIndividual ==
+                              false) {
                             navigateFinish(context, const LayoutParent());
-                          }else{
-
+                          } else {
                             navigateFinish(context, const MyHomePage());
                           }
-
-
                         }
                       },
                       title: "Sign in",

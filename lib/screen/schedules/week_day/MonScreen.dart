@@ -20,7 +20,7 @@ class MonScreen extends StatelessWidget {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.58,
               child: ListView.builder(
-                physics: BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 itemCount: 3,
                 itemBuilder: (context, index) {
                   return BuildListOfSubject(

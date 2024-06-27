@@ -124,3 +124,63 @@ class ImageText extends StatelessWidget {
     );
   }
 }
+
+class ImageText11 extends StatelessWidget {
+  const ImageText11(
+      {super.key, required this.titel, this.onTap, required this.iconz});
+  final Icon iconz;
+  final String titel;
+  final void Function()? onTap;
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        height: 90.h,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12.r),
+          border: Border.all(
+            width: 2.w,
+            color: AppColors.colorGreyBlack,
+          ),
+        ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 4.h),
+          child: Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: iconz,
+              ),
+              SizedBox(
+                width: 8.w,
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: Text(
+                      titel,
+                      style: TextStyle(
+                        color: AppColors.colorWhite,
+                        fontSize: 22,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 4.h,
+                  ),
+                  SizedBox(
+                    height: 4.h,
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

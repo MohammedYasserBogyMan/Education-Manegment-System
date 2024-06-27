@@ -11,7 +11,7 @@ class NotificationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Notification',
           style: TextStyle(
             color: Colors.white,
@@ -23,7 +23,7 @@ class NotificationScreen extends StatelessWidget {
             onTap: () {
               navigateBack(context);
             },
-            child: Icon(
+            child: const Icon(
               Icons.arrow_back_ios,
               color: Colors.white,
             )),
@@ -59,7 +59,7 @@ class NotificationScreen extends StatelessWidget {
                           height: 40.h,
                           width: 40.w,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         Column(
@@ -83,8 +83,8 @@ class NotificationScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                        Spacer(),
-                        Icon(
+                        const Spacer(),
+                        const Icon(
                           Icons.more_horiz,
                           size: 18,
                           color: Colors.white,

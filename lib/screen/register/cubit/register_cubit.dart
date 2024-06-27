@@ -42,7 +42,7 @@ class RegisterCubit extends Cubit<RegisterState> {
       final image = await ImagePicker().pickImage(source: ImageSource.gallery);
       if (image != null) {
         final imageTemporary = File(image.path);
-        this.imageIndividual = imageTemporary;
+        imageIndividual = imageTemporary;
         emit(ImagePickerNationalState());
       }
     } on PlatformException catch (e) {
@@ -61,9 +61,7 @@ class RegisterCubit extends Cubit<RegisterState> {
       firstDate: DateTime(1950),
       lastDate: DateTime(DateTime.now().year - 10),
     );
-    if (timeNow != null) {
-      dateController.text = DateFormat('yyyy-MMM-dd').format(time!).toString();
-    }
+    dateController.text = DateFormat('yyyy-MMM-dd').format(time!).toString();
     emit(DatePikerState());
   }
 
@@ -89,10 +87,8 @@ class RegisterCubit extends Cubit<RegisterState> {
       firstDate: DateTime(1950),
       lastDate: DateTime.now(),
     );
-    if (timeNow != null) {
-      businessDateController.text =
-          DateFormat('yyyy-MMM-dd').format(time!).toString();
-    }
+    businessDateController.text =
+        DateFormat('yyyy-MMM-dd').format(time!).toString();
     emit(DatePikerState());
   }
 
@@ -104,19 +100,19 @@ class RegisterCubit extends Cubit<RegisterState> {
         switch (index) {
           case 0:
             {
-              this.businessLogo = imageTemporary;
+              businessLogo = imageTemporary;
             }
             break;
 
           case 1:
             {
-              this.attachmentID = imageTemporary;
+              attachmentID = imageTemporary;
             }
             break;
 
           case 2:
             {
-              this.attachmentCR = imageTemporary;
+              attachmentCR = imageTemporary;
             }
             break;
         }

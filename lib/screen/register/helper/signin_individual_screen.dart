@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
@@ -20,9 +19,7 @@ class SignInIndividualScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<RegisterCubit, RegisterState>(
-      listener: (context, state) {
-
-      },
+      listener: (context, state) {},
       builder: (context, state) {
         var cubit = RegisterCubit.get(context);
         return Form(
@@ -46,16 +43,16 @@ class SignInIndividualScreen extends StatelessWidget {
                           backgroundColor: AppColors.colorImage,
                           child: cubit.imageIndividual == null
                               ? Icon(
-                            Icons.person,
-                            size: 70.r,
-                          )
+                                  Icons.person,
+                                  size: 70.r,
+                                )
                               : ClipOval(
-                            child: Image.file(
-                              width: double.infinity,
-                              cubit.imageIndividual!,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
+                                  child: Image.file(
+                                    width: double.infinity,
+                                    cubit.imageIndividual!,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
                         ),
                       ),
                     ),
@@ -97,7 +94,7 @@ class SignInIndividualScreen extends StatelessWidget {
                 textController: cubit.fullNameController,
                 validator: (name) => Validator.validateName(name!),
                 inputType: TextInputType.name,
-                prefixIcon: Icon(IconlyBroken.profile),
+                prefixIcon: const Icon(IconlyBroken.profile),
                 hintText: "Full Name",
               ),
               SizedBox(height: 8.h),
@@ -105,7 +102,7 @@ class SignInIndividualScreen extends StatelessWidget {
                 textController: cubit.phoneController,
                 validator: (phone) => Validator.validatePhone(phone!),
                 inputType: TextInputType.phone,
-                prefixIcon:  Icon(IconlyBroken.addUser),
+                prefixIcon: const Icon(IconlyBroken.addUser),
                 hintText: "student ID",
                 maxNumber: 9,
               ),
@@ -115,7 +112,7 @@ class SignInIndividualScreen extends StatelessWidget {
                 validator: (password) => Validator.validatePassword(password!),
                 inputType: TextInputType.text,
                 isPassword: true,
-                prefixIcon:  Icon(IconlyBroken.password),
+                prefixIcon: const Icon(IconlyBroken.password),
                 hintText: "Password",
               ),
               SizedBox(height: 8.h),
@@ -125,7 +122,7 @@ class SignInIndividualScreen extends StatelessWidget {
                     password!, cubit.passwordController.text),
                 inputType: TextInputType.text,
                 isPassword: true,
-                prefixIcon: Icon(IconlyBroken.password),
+                prefixIcon: const Icon(IconlyBroken.password),
                 hintText: "Confirm Password",
               ),
               SizedBox(height: 8.h),
@@ -134,11 +131,10 @@ class SignInIndividualScreen extends StatelessWidget {
                 validator: (mail) => Validator.validateEmail(mail!),
                 inputType: TextInputType.emailAddress,
                 isPassword: false,
-                prefixIcon: Icon(IconlyBroken.document),
+                prefixIcon: const Icon(IconlyBroken.document),
                 hintText: "Email",
               ),
               SizedBox(height: 8.h),
-
               SizedBox(height: 24.h),
               MusterButton(
                   isActive: state is SendSignInLoadingState ? false : true,

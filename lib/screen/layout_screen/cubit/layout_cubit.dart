@@ -16,31 +16,29 @@ class LayoutCubit extends Cubit<HomeState> {
   static LayoutCubit get(context) => BlocProvider.of(context);
   int current = 0;
   List<Widget> screen = [
-    HomeScreen(),
+    const HomeScreen(),
     SchedulesPage(),
     AttendancePage(),
-    ExamsScreen(),
-    StatisticsScreen(),
-    AssignmentsScreen(),
+    const ExamsScreen(),
+    const StatisticsScreen(),
+    const AssignmentsScreen(),
   ];
-  int currenttitle=0;
-  List<String> title=[
+  int currenttitle = 0;
+  List<String> title = [
     '',
     'Schedule',
     'Attendance',
     'Exams',
     'Statistics',
     'Assignments',
-
   ];
-
 
   void changeIndex(int index) {
     // if (index == 2) {
     //   return null;
     // }
     current = index;
-    currenttitle=index;
+    currenttitle = index;
     emit(AppChangeBottomNavBarState());
   }
 }

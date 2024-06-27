@@ -8,7 +8,7 @@ import '../../../shared/toust.dart';
 import '../cubit/parent_cubit.dart';
 
 class CreditCardDetailsScreen extends StatefulWidget {
-  CreditCardDetailsScreen({super.key});
+  const CreditCardDetailsScreen({super.key});
 
   @override
   State<CreditCardDetailsScreen> createState() =>
@@ -25,7 +25,7 @@ class _CreditCardDetailsScreenState extends State<CreditCardDetailsScreen> {
         // TODO: implement listener
       },
       builder: (context, state) {
-        final cubit=ParentCubit.get(context);
+        final cubit = ParentCubit.get(context);
         return Form(
           key: key,
           child: Padding(
@@ -55,10 +55,12 @@ class _CreditCardDetailsScreenState extends State<CreditCardDetailsScreen> {
                     height: 20.h,
                   ),
                   CustomTextFormField(
-                      inputFormatters: [],
+                      inputFormatters: const [],
                       hintText: 'Card Holder Name',
-                      textController:cubit. HolderNamecontroller,
-                      validator: (p0) {},
+                      textController: cubit.HolderNamecontroller,
+                      validator: (p0) {
+                        return null;
+                      },
                       inputType: TextInputType.name),
                   SizedBox(
                     height: 15.h,
@@ -67,8 +69,7 @@ class _CreditCardDetailsScreenState extends State<CreditCardDetailsScreen> {
                       onChanged: (text) {
                         print(text?.split(" "));
                       },
-                      inputFormatters: [
-                      ],
+                      inputFormatters: const [],
                       isNumber: true,
                       hintText: 'Card Number',
                       textController: cubit.CardNumbercontroller,
@@ -93,8 +94,7 @@ class _CreditCardDetailsScreenState extends State<CreditCardDetailsScreen> {
                             onChanged: (value) {
                               print(value);
                             },
-                            inputFormatters: [
-                            ],
+                            inputFormatters: const [],
                             hintText: 'MM/YY',
                             textController: cubit.MMcontroller,
                             validator: (value) {
@@ -113,11 +113,10 @@ class _CreditCardDetailsScreenState extends State<CreditCardDetailsScreen> {
                       ),
                       Expanded(
                         child: CustomTextFormField(
-                          onChanged: (value){
-                            cubit.setState();
-                          },
-                            inputFormatters: [
-                            ],
+                            onChanged: (value) {
+                              cubit.setState();
+                            },
+                            inputFormatters: const [],
                             hintText: 'CVV',
                             textController: cubit.CVVcontroller,
                             validator: (value) {
@@ -132,16 +131,19 @@ class _CreditCardDetailsScreenState extends State<CreditCardDetailsScreen> {
                       ),
                     ],
                   ),
-                  Spacer(),
+                  const Spacer(),
                   MusterButton(
                     isActive: cubit.CVVcontroller.text.isEmpty ? false : true,
                     title: 'Proceed to pay',
-                    onTap:
-                        () {
+                    onTap: () {
                       ToastWidget(
-                          message: "Done",
-                          color: Colors.green.shade300)
-                          .showToast(context);
+                        message: "Done",
+                        color: Colors.green.shade300,
+                      ).showToast(context);
+
+                      Future.delayed(const Duration(seconds: 1), () {
+                        Navigator.pop(context);
+                      });
                     },
                   ),
                   SizedBox(

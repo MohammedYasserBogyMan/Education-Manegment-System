@@ -10,7 +10,7 @@ class AboutScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'About',
           style: TextStyle(
             color: Colors.white,
@@ -22,7 +22,7 @@ class AboutScreen extends StatelessWidget {
             onTap: () {
               navigateBack(context);
             },
-            child: Icon(
+            child: const Icon(
               Icons.arrow_back_ios,
               color: Colors.white,
             )),
@@ -35,7 +35,7 @@ class AboutScreen extends StatelessWidget {
             SizedBox(
               height: 30.h,
             ),
-            Text(
+            const Text(
               'EMS Project',
               style: TextStyle(
                 fontSize: 24,
@@ -45,8 +45,8 @@ class AboutScreen extends StatelessWidget {
             SizedBox(
               height: 30.h,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 18),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 18),
               child: Text(
                 'EMS Project EMS Project EMS ProjectEMS ProjectEMS ProjectEMS ProjectEMS Project EMS Project EMS Project EMS ProjectEMS ProjectEMS ProjectEMS ProjectEMS Project',
                 style: TextStyle(

@@ -18,15 +18,13 @@ class SchedulesCubit extends Cubit<SchedulesState> {
 
   static SchedulesCubit get(context) => BlocProvider.of(context);
   int initialActive = 1;
-  Widget isActiveScreen = SunScreen();
+  Widget isActiveScreen = const SunScreen();
   List<Widget> Screens = [
     const SunScreen(),
     const MonScreen(),
     const TueScreen(),
     const WedScreen(),
     const HursScreen(),
-
-
   ];
 
   void changeActiveButton(int index) {
@@ -34,6 +32,7 @@ class SchedulesCubit extends Cubit<SchedulesState> {
     isActiveScreen = Screens[index];
     emit(ChangeBottomActive());
   }
+
   final List<ItemModels> itemModels = [
     ItemModels(
       color: AppColors.colorSecondary,
@@ -76,13 +75,15 @@ class SchedulesCubit extends Cubit<SchedulesState> {
       sTime: '03:00',
       eTime: '04:30',
       room: 'Room 5',
-    ), ItemModels(
+    ),
+    ItemModels(
       color: AppColors.colorOrange,
       titel: 'Geology',
       sTime: '03:00',
       eTime: '04:30',
       room: 'Room 5',
-    ), ItemModels(
+    ),
+    ItemModels(
       color: AppColors.colorOrange,
       titel: 'Geology',
       sTime: '03:00',

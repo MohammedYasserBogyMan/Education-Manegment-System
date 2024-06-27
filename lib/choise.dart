@@ -12,7 +12,7 @@ class ChoiseUser extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: BlocConsumer<RegisterCubit, RegisterState>(
         listener: (context, state) {
           // TODO: implement listener
@@ -23,92 +23,95 @@ class ChoiseUser extends StatelessWidget {
             padding: const EdgeInsets.all(12.0),
             child: Center(
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset("assets/images/logo.png"),
+                const SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Image.asset("assets/images/logo.png"),
-                  SizedBox(height: 20,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      GestureDetector(
-                        onTap: () => cubit.changeState(action: true),
-                        child: Container(
-                          height: 125.h,
-                          width: 170.w,
-                          decoration: BoxDecoration(
-                              color: cubit.isIndividual
-                                  ? AppColors.colorBlueBlack
-                                  : Colors.white,
-                              borderRadius: BorderRadius.circular(20.r),
-                              border: Border.all(
-                                  color: cubit.isIndividual
-                                      ? AppColors.colorSecondary
-                                      : AppColors.colorTitleSecondary)),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Image.asset("assets/images/student.png",
-
-                                  height: 42.h,
-                                  width: 42.w
-                              ),
-                              Text(
-                                "student",
-                                style: TextStyle(
+                    GestureDetector(
+                      onTap: () => cubit.changeState(action: true),
+                      child: Container(
+                        height: 125.h,
+                        width: 170.w,
+                        decoration: BoxDecoration(
+                            color: cubit.isIndividual
+                                ? AppColors.colorBlueBlack
+                                : Colors.white,
+                            borderRadius: BorderRadius.circular(20.r),
+                            border: Border.all(
+                                color: cubit.isIndividual
+                                    ? AppColors.colorSecondary
+                                    : AppColors.colorTitleSecondary)),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Image.asset("assets/images/student.png",
+                                height: 42.h, width: 42.w),
+                            Text(
+                              "student",
+                              style: TextStyle(
 
                                   ///
-                                    fontSize: 20.sp,
-                                    color: cubit.isIndividual
-                                        ? AppColors.colorgreenwhite
-                                        : AppColors.colorTitleSecondary),
-                              ),
-                            ],
-                          ),
+                                  fontSize: 20.sp,
+                                  color: cubit.isIndividual
+                                      ? AppColors.colorgreenwhite
+                                      : AppColors.colorTitleSecondary),
+                            ),
+                          ],
                         ),
                       ),
-                      GestureDetector(
-                        onTap: () => cubit.changeState(action: false),
-                        child: Container(
-                          height: 125.h,
-                          width: 170.w,
-                          decoration: BoxDecoration(
-                              color: cubit.isIndividual == false ? AppColors
-                                  .colorBlueBlack : Colors.white,
-                              borderRadius: BorderRadius.circular(20.r),
-                              border: Border.all(
-                              )),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Image.asset("assets/images/parents.jpg",
-                                  height: 42.h,
-                                  width: 42.w
-                              ),
-                              Text(
-                                "Parents",
-                                style: TextStyle(
-                                    fontSize: 20.sp,
-                                    color: cubit.isIndividual == false
-                                        ? AppColors.colorgreenwhite
-                                        : AppColors.colorTitleSecondary),
-                              ),
-                            ],
-                          ),
+                    ),
+                    GestureDetector(
+                      onTap: () => cubit.changeState(action: false),
+                      child: Container(
+                        height: 125.h,
+                        width: 170.w,
+                        decoration: BoxDecoration(
+                            color: cubit.isIndividual == false
+                                ? AppColors.colorBlueBlack
+                                : Colors.white,
+                            borderRadius: BorderRadius.circular(20.r),
+                            border: Border.all()),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Image.asset("assets/images/parents.jpg",
+                                height: 42.h, width: 42.w),
+                            Text(
+                              "Parents",
+                              style: TextStyle(
+                                  fontSize: 20.sp,
+                                  color: cubit.isIndividual == false
+                                      ? AppColors.colorgreenwhite
+                                      : AppColors.colorTitleSecondary),
+                            ),
+                          ],
                         ),
                       ),
-                    ],
-                  ),
-                  SizedBox(height: 60.h,),
-                  Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: MusterButton(title:cubit.isIndividual==false? "Login Parents":"Login student", onTap: (){
-                      navigateTo(context, LogInScreen());
-                    }),
-                  )
-                ],)
-            ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 60.h,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: MusterButton(
+                      title: cubit.isIndividual == false
+                          ? "Login Parents"
+                          : "Login student",
+                      onTap: () {
+                        navigateTo(context, const LogInScreen());
+                      }),
+                )
+              ],
+            )),
           );
         },
       ),

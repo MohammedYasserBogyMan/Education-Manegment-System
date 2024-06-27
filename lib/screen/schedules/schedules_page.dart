@@ -8,7 +8,7 @@ import 'package:school/screen/schedules/widget/build_list_subject.dart';
 import 'package:school/shared/color.dart';
 
 class SchedulesPage extends StatelessWidget {
-  SchedulesPage({super.key});
+  const SchedulesPage({super.key});
 
   @override
   Widget build(BuildContext context) {

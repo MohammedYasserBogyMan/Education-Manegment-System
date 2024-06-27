@@ -18,12 +18,13 @@ class ProfileScreen extends StatelessWidget {
           style: TextStyle(fontSize: 20, color: Colors.white),
         ),
       ),
-    body: Padding(
-    padding: const EdgeInsets.all(16.0),
-    child: Column(
-    children: [
-    Column( mainAxisAlignment: MainAxisAlignment.center ,
-      children: [
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
                 ClipRRect(
                     child: Image.asset(
                   'assets/images/image_person.png',
@@ -41,20 +42,18 @@ class ProfileScreen extends StatelessWidget {
                 const Text('20200157',
                     style: TextStyle(fontSize: 18, color: Colors.white)),
               ],
-    ),
-      const Spacer(flex: 1) ,
-      buildInfo('Gender :', 'Mall'),
-    buildInfo('Birth Date :', '15th Aug 2010'),
-    buildInfo('Address :', 'Lorem ipsum dolor sit amet'),
-    buildInfo('Class Room :', '1A'),
-    buildInfo('Date Entry :', '22nd Jul 2008'),
-    buildInfo('Status :', 'Active'),
-      const Spacer(flex: 2)
-    ],
-    ),
-    ),
+            ),
+            const Spacer(flex: 1),
+            buildInfo('Gender :', 'Male'),
+            buildInfo('Birth Date :', '15th Aug 2010'),
+            buildInfo('Address :', 'Lorem ipsum dolor sit amet'),
+            buildInfo('Class Room :', '1A'),
+            buildInfo('Date Entry :', '22nd Jul 2008'),
+            buildInfo('Status :', 'Active'),
+            const Spacer(flex: 2)
+          ],
+        ),
+      ),
     );
   }
-
-
 }

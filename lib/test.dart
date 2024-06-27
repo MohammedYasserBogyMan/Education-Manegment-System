@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class test extends StatelessWidget {
+  const test({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -9,7 +11,7 @@ class test extends StatelessWidget {
         slivers: <Widget>[
           SliverAppBar(
             // Title displayed in the app bar
-            title: Text('SliverAppBar Example'),
+            title: const Text('SliverAppBar Example'),
 
             // Floating app bar will disappear upon scrolling down
             floating: true,
@@ -23,10 +25,9 @@ class test extends StatelessWidget {
             // Additional height for the app bar when it is collapsed
             expandedHeight: 200.0,
 
-
             flexibleSpace: FlexibleSpaceBar(
               // Title displayed when the app bar is expanded
-              title: Text('Welcome to Flutter'),
+              title: const Text('Welcome to Flutter'),
 
               // Background image for the app bar
               background: Image.network(
@@ -36,7 +37,7 @@ class test extends StatelessWidget {
             ),
           ),
           // You can add more SliverList, SliverGrid, or other Sliver widgets here
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: Column(
               children: [
                 Text(

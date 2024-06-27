@@ -27,8 +27,9 @@ class LayoutScreen extends StatelessWidget {
         return Scaffold(
           appBar: AppBar(
             centerTitle: true,
-            title: Text(cubit.title[cubit.currenttitle]
-               , style: TextStyle(color: Colors.white, fontSize: 18),
+            title: Text(
+              cubit.title[cubit.currenttitle],
+              style: const TextStyle(color: Colors.white, fontSize: 18),
             ),
             elevation: 0,
             backgroundColor: AppColors.colorBackGroundApp,
@@ -51,7 +52,7 @@ class LayoutScreen extends StatelessWidget {
             actions: [
               GestureDetector(
                   onTap: () {
-                    navigateTo(context, NotificationScreen());
+                    navigateTo(context, const NotificationScreen());
                   },
                   child: SvgPicture.asset(
                     'assets/icons/notification_.svg',

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../models/item_models.dart';
 
 class BuildListOfSubject extends StatelessWidget {
-  BuildListOfSubject({Key? key, required this.Item}) : super(key: key);
+  const BuildListOfSubject({Key? key, required this.Item}) : super(key: key);
   final ItemModels Item;
   @override
   Widget build(BuildContext context) {
@@ -18,13 +18,14 @@ class BuildListOfSubject extends StatelessWidget {
         child: Row(
           children: [
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 3, horizontal: 10),
+              padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 10),
               child: Column(
                 children: [
                   Text(Item.sTime,
-                      style: TextStyle(fontSize: 18, color: Colors.white)),
+                      style:
+                          const TextStyle(fontSize: 18, color: Colors.white)),
                   Text(Item.eTime,
-                      style: TextStyle(fontSize: 16, color: Colors.white))
+                      style: const TextStyle(fontSize: 16, color: Colors.white))
                 ],
               ),
             ),
@@ -36,16 +37,16 @@ class BuildListOfSubject extends StatelessWidget {
               color: Colors.white,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 1),
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 1),
               child: Column(
                 children: [
                   Text(Item.titel,
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 20,
                           color: Colors.white,
                           fontWeight: FontWeight.bold)),
                   Text(Item.room,
-                      style: TextStyle(fontSize: 16, color: Colors.white))
+                      style: const TextStyle(fontSize: 16, color: Colors.white))
                 ],
               ),
             )

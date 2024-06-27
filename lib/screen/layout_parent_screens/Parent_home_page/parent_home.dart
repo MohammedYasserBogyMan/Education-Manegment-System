@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:school/screen/attendans/statistics_screen.dart';
 import 'package:school/screen/home_/cubit/layout_cubit.dart';
+import 'package:school/screen/layout_parent_screens/Parent_home_page/payment.dart';
 import 'package:school/screen/layout_screen/layout_screen.dart';
 import 'package:school/screen/layout_screen/widget.dart';
+import 'package:school/screen/schedules/schedules_page.dart';
+import 'package:school/screen/statistics/statistics_screen.dart';
 import 'package:school/shared/color.dart';
 
 class ParentHomeScreen extends StatelessWidget {
@@ -12,7 +17,7 @@ class ParentHomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  SingleChildScrollView(
+    return SingleChildScrollView(
       child: Container(
         padding: const EdgeInsets.all(20),
         child: BlocConsumer<HomeCubit, HomeState>(
@@ -44,7 +49,7 @@ class ParentHomeScreen extends StatelessWidget {
                 const SizedBox(
                   height: 8,
                 ),
-                Container(
+                SizedBox(
                   height: 80.h,
                   width: double.infinity,
                   child: Row(
@@ -62,7 +67,7 @@ class ParentHomeScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Mahmoud Ahmed',
+                            'MR.Mohammed Yasser',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 24,
@@ -70,7 +75,7 @@ class ParentHomeScreen extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            '20200157',
+                            '20201216',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 16,
@@ -82,7 +87,7 @@ class ParentHomeScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 10.h,
+                  height: 20.h,
                 ),
                 Container(
                   height: 100,
@@ -115,173 +120,83 @@ class ParentHomeScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 20.h,
+                  height: 40.h,
                 ),
                 SizedBox(
-                  height: 150,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-
-                    itemCount: 3, // Adjust the number of items as needed
-                    itemBuilder: (context, index) {
-                      return const details(); // Assuming details() returns a Widget
-                    },
-                    // Adjust the item extent as needed
+                  height: 80.h,
+                  child: ImageText11(
+                    iconz: const Icon(
+                      FontAwesomeIcons.chartColumn,
+                      size: 35.0,
+                      color: Colors.blue,
+                    ),
+                    titel: 'Grades',
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => StatisticsScreen()),
+                    ),
                   ),
-                ),
-                SizedBox(
-                  height: 10.h,
-                ),
-                Row(
-                  children: [
-                    const Icon(
-                      Icons.date_range,
-                      color: Colors.white,
-                    ),
-                    SizedBox(
-                      width: 5.w,
-                    ),
-                    Text(
-                      'Day Schedule',
-                      style: TextStyle(
-                        color: AppColors.colorWhite,
-                        fontSize: 20,
-                      ),
-                    ),
-                    const Spacer(),
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10.r),
-                        border: Border.all(
-                          width: 2.w,
-                          color: AppColors.colorGreyBlack,
-                        ),
-                      ),
-                      child: Text(
-                        'View All',
-                        style: TextStyle(
-                          color: AppColors.colorWhite,
-                          fontSize: 14.sp,
-                        ),
-                      ),
-                    )
-                  ],
                 ),
                 SizedBox(
                   height: 8.h,
                 ),
                 SizedBox(
-                  height: 200.h,
-                  child: ListView.separated(
-                      itemBuilder: (context, index) {
-                        return const ImageText();
-                      },
-                      separatorBuilder: (context, index) {
-                        return SizedBox(height: 5.h);
-                      },
-                      itemCount: 3),
-                ),
-                const Text(
-                  '12 new assignments uploaded',
-                  style: TextStyle(fontSize: 20, color: Colors.grey),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                overlapped(),
-                const SizedBox(
-                  height: 20,
-                ),
-                const Divider(
-                  thickness: 1,
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                ListTile(
-                  leading: CircleAvatar(
-                    radius: 28.0,
-                    child: Image.asset('assets/icons/1.png'),
+                  height: 80.h,
+                  child: ImageText11(
+                    iconz: const Icon(
+                      FontAwesomeIcons.clipboard,
+                      size: 35.0,
+                      color: Colors.blue,
+                    ),
+                    titel: 'Attendans',
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AttendancePage()),
+                    ),
                   ),
-                  title: Text(
-                    'Science',
-                    style: TextStyle(
-                        fontSize: 19,
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.colorWhite),
-                  ),
-                  subtitle: Text(
-                    '3 Assignment',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.colorWhite),
-                  ),
-                ),
-                const SizedBox(
-                  height: 8,
                 ),
                 SizedBox(
-                  height: 230,
-                  child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: cubit.science.length,
-                      itemBuilder: (context, index) {
-                        return AspectRatio(
-                          aspectRatio: 1.5,
-                          child: Container(
-                            height: 250,
-                            margin: const EdgeInsets.only(right: 15),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              image: DecorationImage(
-                                  image: AssetImage(cubit.science[index]),
-                                  fit: BoxFit.contain),
-                              color: Colors.purple[100],
-                            ),
-                          ),
-                        );
-                      }),
-                ),
-                const SizedBox(
-                  height: 5,
-                ),
-                ListTile(
-                  leading: CircleAvatar(
-                    radius: 28.0,
-                    child: Image.asset('assets/icons/2.png'),
-                  ),
-                  title: const Text(
-                    'Math',
-                    style:
-                    TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
-                  ),
-                  subtitle: const Text('4 Assignment'),
-                ),
-                const SizedBox(
-                  height: 8,
+                  height: 8.h,
                 ),
                 SizedBox(
-                  height: 230,
-                  child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: cubit.math.length,
-                      itemBuilder: (context, index) {
-                        return AspectRatio(
-                          aspectRatio: 1.5,
-                          child: Container(
-                            height: 250,
-                            margin: const EdgeInsets.only(right: 15),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              image: DecorationImage(
-                                  image: AssetImage(cubit.math[index]),
-                                  fit: BoxFit.contain),
-                              color: Colors.purple[100],
-                            ),
-                          ),
-                        );
-                      }),
-                )
+                  height: 80.h,
+                  child: ImageText11(
+                    iconz: const Icon(
+                      FontAwesomeIcons.calendar,
+                      size: 35.0,
+                      color: Colors.blue,
+                    ),
+                    titel: 'Schedules',
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SchedulesPage()),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 8.h,
+                ),
+                SizedBox(
+                  height: 80.h,
+                  child: ImageText11(
+                    iconz: const Icon(
+                      FontAwesomeIcons.creditCard,
+                      size: 35.0,
+                      color: Colors.blue,
+                    ),
+                    titel: 'Payment',
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              Scaffold(body: CreditCardDetailsScreen())),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 8.h,
+                ),
               ],
             );
           },

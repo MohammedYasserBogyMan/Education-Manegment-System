@@ -20,7 +20,7 @@ class HursScreen extends StatelessWidget {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.58,
               child: ListView.builder(
-                physics: BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 itemCount: 2,
                 itemBuilder: (context, index) {
                   return BuildListOfSubject(

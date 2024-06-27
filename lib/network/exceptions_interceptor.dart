@@ -5,7 +5,7 @@ import 'dio_exceptions.dart';
 
 class ExceptionInterceptor extends Interceptor {
   @override
-  void onError(DioError err, ErrorInterceptorHandler handler) {
+  void onError(DioException err, ErrorInterceptorHandler handler) {
     final DioExceptions exceptions = DioExceptions.fromDioError(err);
     debugPrint(exceptions.message);
     debugPrint(

@@ -41,6 +41,7 @@ class MusterButton extends StatelessWidget {
     );
   }
 }
+
 class CustomAppBarBack extends StatelessWidget {
   const CustomAppBarBack({
     super.key,
@@ -53,19 +54,18 @@ class CustomAppBarBack extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 60.h,
       width: double.infinity,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-
           if (title != null)
             Text(
               title!,
               style: TextStyle(fontSize: 18.sp, color: AppColors.colorWhite),
             ),
-          Container(
+          SizedBox(
             height: 45.h,
             width: 45.w,
           )
@@ -74,13 +74,15 @@ class CustomAppBarBack extends StatelessWidget {
     );
   }
 }
+
 class RowTypePeer extends StatelessWidget {
-  const RowTypePeer({super.key,
-    required this.onPressedBuyer,
-    required this.onPressedSeller,
-    required this.buyer,
-    required this.isSeller,
-    required this.seller});
+  const RowTypePeer(
+      {super.key,
+      required this.onPressedBuyer,
+      required this.onPressedSeller,
+      required this.buyer,
+      required this.isSeller,
+      required this.seller});
 
   final void Function() onPressedBuyer;
   final void Function() onPressedSeller;
@@ -92,7 +94,7 @@ class RowTypePeer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 60.h,
-      width:170,
+      width: 170,
       decoration: BoxDecoration(
           color: Colors.transparent,
           border: Border.all(color: AppColors.colorBorderBack),
@@ -111,11 +113,10 @@ class RowTypePeer extends StatelessWidget {
               highlightColor: Colors.transparent,
               splashColor: Colors.transparent,
               height: 60.h,
-              color: isSeller == true
-                  ? AppColors.colorWhite
-                  : Colors.transparent,
+              color:
+                  isSeller == true ? AppColors.colorWhite : Colors.transparent,
               shape: OutlineInputBorder(
-                borderSide: BorderSide(style: BorderStyle.none),
+                borderSide: const BorderSide(style: BorderStyle.none),
                 borderRadius: BorderRadius.all(Radius.circular(10.r)),
               ),
               child: Text(
@@ -139,11 +140,10 @@ class RowTypePeer extends StatelessWidget {
               highlightColor: Colors.transparent,
               splashColor: Colors.transparent,
               height: 60.h,
-              color: isSeller == false
-                  ? AppColors.colorWhite
-                  : Colors.transparent,
+              color:
+                  isSeller == false ? AppColors.colorWhite : Colors.transparent,
               shape: OutlineInputBorder(
-                borderSide: BorderSide(style: BorderStyle.none),
+                borderSide: const BorderSide(style: BorderStyle.none),
                 borderRadius: BorderRadius.all(Radius.circular(10.r)),
               ),
               child: Text(
@@ -164,6 +164,7 @@ class RowTypePeer extends StatelessWidget {
     );
   }
 }
+
 class CustomTile extends StatelessWidget {
   const CustomTile({
     super.key,
@@ -463,8 +464,9 @@ class CustomTextFormField extends StatelessWidget {
               prefixIconConstraints:
                   BoxConstraints.loose(const Size.fromWidth(90)),
               hintText: hintText,
-              hintStyle: TextStyle(fontSize: 14.sp, color: Color(0xff959595)),
-              helperStyle: TextStyle(color: Color(0xff7E7E7E)),
+              hintStyle:
+                  TextStyle(fontSize: 14.sp, color: const Color(0xff959595)),
+              helperStyle: const TextStyle(color: Color(0xff7E7E7E)),
               errorBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(radius!.r)),
                   borderSide: BorderSide(

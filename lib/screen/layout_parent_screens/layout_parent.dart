@@ -17,7 +17,6 @@ class LayoutParent extends StatelessWidget {
       builder: (context, state) {
         final cubit = ParentCubit.get(context);
         return Scaffold(
-
           body: cubit.screen[cubit.current],
           bottomNavigationBar: BottomNavigationBar(
             onTap: (index) {
@@ -35,14 +34,11 @@ class LayoutParent extends StatelessWidget {
               BottomNavigationBarItem(
                   icon: FaIcon(FontAwesomeIcons.home), label: 'Home'),
               BottomNavigationBarItem(
-                  icon: FaIcon(FontAwesomeIcons.clipboard), label: 'payment'),
-              BottomNavigationBarItem(
                   icon: FaIcon(FontAwesomeIcons.calendar), label: 'profile'),
-
             ],
           ),
           floatingActionButtonLocation:
-          FloatingActionButtonLocation.centerDocked,
+              FloatingActionButtonLocation.centerDocked,
           // floatingActionButton: FloatingActionButton(
           //   backgroundColor: Colors.purple[200],
           //   onPressed:(){  },
