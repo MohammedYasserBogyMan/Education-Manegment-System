@@ -119,54 +119,7 @@ class ParentHomeScreen extends StatelessWidget {
                     height: 20.h,
                   ),
                   SizedBox(
-                    height: 150,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-
-                      itemCount: 3, // Adjust the number of items as needed
-                      itemBuilder: (context, index) {
-                        return const details(); // Assuming details() returns a Widget
-                      },
-                      // Adjust the item extent as needed
-                    ),
-                  ),
-                  SizedBox(
                     height: 10.h,
-                  ),
-                  Row(
-                    children: [
-                      const Icon(
-                        Icons.date_range,
-                        color: Colors.white,
-                      ),
-                      SizedBox(
-                        width: 5.w,
-                      ),
-                      Text(
-                        'Day Schedule',
-                        style: TextStyle(
-                          color: AppColors.colorWhite,
-                          fontSize: 20,
-                        ),
-                      ),
-                      const Spacer(),
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10.r),
-                          border: Border.all(
-                            width: 2.w,
-                            color: AppColors.colorGreyBlack,
-                          ),
-                        ),
-                        child: Text(
-                          'View All',
-                          style: TextStyle(
-                            color: AppColors.colorWhite,
-                            fontSize: 14.sp,
-                          ),
-                        ),
-                      )
-                    ],
                   ),
                   SizedBox(
                     height: 8.h,
@@ -182,107 +135,9 @@ class ParentHomeScreen extends StatelessWidget {
                         },
                         itemCount: 3),
                   ),
-                  const Text(
-                    '12 new assignments uploaded',
-                    style: TextStyle(fontSize: 20, color: Colors.grey),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  overlapped(),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  const Divider(
-                    thickness: 1,
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  ListTile(
-                    leading: CircleAvatar(
-                      radius: 28.0,
-                      child: Image.asset('assets/icons/1.png'),
-                    ),
-                    title: Text(
-                      'Science',
-                      style: TextStyle(
-                          fontSize: 19,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.colorWhite),
-                    ),
-                    subtitle: Text(
-                      '3 Assignment',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.colorWhite),
-                    ),
-                  ),
                   const SizedBox(
                     height: 8,
                   ),
-                  SizedBox(
-                    height: 230,
-                    child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: cubit.science.length,
-                        itemBuilder: (context, index) {
-                          return AspectRatio(
-                            aspectRatio: 1.5,
-                            child: Container(
-                              height: 250,
-                              margin: const EdgeInsets.only(right: 15),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                image: DecorationImage(
-                                    image: AssetImage(cubit.science[index]),
-                                    fit: BoxFit.contain),
-                                color: Colors.purple[100],
-                              ),
-                            ),
-                          );
-                        }),
-                  ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  ListTile(
-                    leading: CircleAvatar(
-                      radius: 28.0,
-                      child: Image.asset('assets/icons/2.png'),
-                    ),
-                    title: const Text(
-                      'Math',
-                      style:
-                          TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
-                    ),
-                    subtitle: const Text('4 Assignment'),
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  SizedBox(
-                    height: 230,
-                    child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: cubit.math.length,
-                        itemBuilder: (context, index) {
-                          return AspectRatio(
-                            aspectRatio: 1.5,
-                            child: Container(
-                              height: 250,
-                              margin: const EdgeInsets.only(right: 15),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                image: DecorationImage(
-                                    image: AssetImage(cubit.math[index]),
-                                    fit: BoxFit.contain),
-                                color: Colors.purple[100],
-                              ),
-                            ),
-                          );
-                        }),
-                  )
                 ],
               );
             },

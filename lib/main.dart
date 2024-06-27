@@ -20,6 +20,7 @@ import 'package:school/shared/color.dart';
 import 'local_storage/shared_preferences_manager.dart';
 import 'network/bloc_observer.dart';
 import 'screen/menu_screen/menu.dart';
+import 'screen/parent_screens/Parent_home_page/parent_home.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -54,7 +55,7 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.purple,
           ),
           // ignore: prefer_const_constructors
-          home: LogInScreen(),
+          home: ParentHomeScreen(),
         ),
       ),
     );

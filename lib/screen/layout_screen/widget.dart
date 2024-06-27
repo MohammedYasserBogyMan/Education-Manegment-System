@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:school/screen/layout_screen/model.dart';
 
 import '../../shared/color.dart';
 
@@ -79,95 +80,45 @@ class ImageText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 90.h,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12.r),
-        border: Border.all(
-          width: 2.w,
-          color: AppColors.colorGreyBlack,
+    return GestureDetector(
+      onTap: () {},
+      child: Container(
+        height: 90.h,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12.r),
+          border: Border.all(
+            width: 2.w,
+            color: AppColors.colorGreyBlack,
+          ),
         ),
-      ),
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.h),
-        child: Row(
-          children: [
-            Image.asset(
-              'assets/images/person.png',
-            ),
-            SizedBox(
-              width: 8.w,
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'lesson Name',
-                  style: TextStyle(
-                    color: AppColors.colorWhite,
-                    fontSize: 22,
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.h),
+          child: Row(
+            children: [
+              SizedBox(
+                width: 8.w,
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'lesson Name',
+                    style: TextStyle(
+                      color: AppColors.colorWhite,
+                      fontSize: 22,
+                    ),
                   ),
-                ),
-                SizedBox(
-                  height: 4.h,
-                ),
-                Row(
-                  children: [
-                    Text(
-                      'Teacher Ahmed Ali',
-                      style: TextStyle(
-                        color: AppColors.colorWhite,
-                        fontSize: 10,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 140.w,
-                    ),
-                    Image.asset(
-                      'assets/images/Icons.arrow_downward.png',
-                      width: 20.w,
-                      height: 20.h,
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 4.h,
-                ),
-                Row(
-                  children: [
-                    Icon(
-                      Icons.access_time,
-                      size: 15,
-                      color: AppColors.colorGreyBlack,
-                    ),
-                    Text(
-                      '11:00 - 09:00 AM',
-                      style: TextStyle(
-                        color: AppColors.colorGreyBlack,
-                        fontSize: 10,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 20.w,
-                    ),
-                    Icon(
-                      Icons.location_on,
-                      size: 15,
-                      color: AppColors.colorGreyBlack,
-                    ),
-                    Text(
-                      'Room A1.  ',
-                      style: TextStyle(
-                        color: AppColors.colorGreyBlack,
-                        fontSize: 10,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            )
-          ],
+                  SizedBox(
+                    height: 4.h,
+                  ),
+                  SizedBox(
+                    height: 4.h,
+                  ),
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
