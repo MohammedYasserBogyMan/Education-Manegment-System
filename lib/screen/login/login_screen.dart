@@ -13,6 +13,9 @@ import '../../shared/color.dart';
 import '../../shared/components.dart';
 import '../../shared/validator.dart';
 // ignore: unused_import
+import '../layout_parent_screens/Parent_home_page/parent_home.dart';
+import '../layout_parent_screens/layout_parent.dart';
+import '../register/cubit/register_cubit.dart';
 import '../register/register_screen.dart';
 import 'cubit/login_cubit.dart';
 
@@ -192,7 +195,14 @@ class _LogInScreenState extends State<LogInScreen> {
                       onTap: () {
                         if (_formKey.currentState!.validate()) {
                           // cubit.userLogin();
-                          navigateFinish(context, const MyHomePage());
+                          if( RegisterCubit.get(context).isIndividual==false){
+                            navigateFinish(context, const LayoutParent());
+                          }else{
+
+                            navigateFinish(context, const MyHomePage());
+                          }
+
+
                         }
                       },
                       title: "Sign in",

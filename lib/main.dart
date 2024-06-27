@@ -6,6 +6,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:school/screen/exams/cubit/exams_cubit.dart';
 import 'package:school/screen/home_/cubit/layout_cubit.dart';
+import 'package:school/screen/layout_parent_screens/Parent_home_page/parent_home.dart';
+import 'package:school/screen/layout_parent_screens/cubit/parent_cubit.dart';
 import 'package:school/screen/layout_screen/cubit/layout_cubit.dart';
 import 'package:school/screen/layout_screen/layout_screen.dart';
 import 'package:school/screen/login/cubit/login_cubit.dart';
@@ -17,6 +19,7 @@ import 'package:school/screen/register/register_screen.dart';
 import 'package:school/screen/schedules/cubit/schedules_cubit.dart';
 import 'package:school/shared/color.dart';
 
+import 'choise.dart';
 import 'local_storage/shared_preferences_manager.dart';
 import 'network/bloc_observer.dart';
 import 'screen/menu_screen/menu.dart';
@@ -41,7 +44,8 @@ class MyApp extends StatelessWidget {
         BlocProvider<RegisterCubit>(create: (context) => RegisterCubit()),
         BlocProvider<LoginCubit>(create: (context) => LoginCubit()),
         BlocProvider<SchedulesCubit>(create: (context) => SchedulesCubit()),
-        BlocProvider<ExamsCubit>(create: (context) => ExamsCubit())
+        BlocProvider<ExamsCubit>(create: (context) => ExamsCubit()),
+        BlocProvider<ParentCubit>(create: (context) => ParentCubit())
       ],
       child: ScreenUtilInit(
         designSize: const Size(390, 844),
@@ -55,7 +59,11 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.purple,
           ),
           // ignore: prefer_const_constructors
+<<<<<<< HEAD
           home: ParentHomeScreen(),
+=======
+          home: ChoiseUser(),
+>>>>>>> 0242002c22aaee83ff9d96eed7f6ac28970d827f
         ),
       ),
     );
