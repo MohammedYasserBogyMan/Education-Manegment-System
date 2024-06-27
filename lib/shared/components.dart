@@ -41,6 +41,39 @@ class MusterButton extends StatelessWidget {
     );
   }
 }
+class CustomAppBarBack extends StatelessWidget {
+  const CustomAppBarBack({
+    super.key,
+    this.title,
+    this.onTap,
+  });
+
+  final void Function()? onTap;
+  final String? title;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 60.h,
+      width: double.infinity,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+
+          if (title != null)
+            Text(
+              title!,
+              style: TextStyle(fontSize: 18.sp, color: AppColors.colorWhite),
+            ),
+          Container(
+            height: 45.h,
+            width: 45.w,
+          )
+        ],
+      ),
+    );
+  }
+}
 class RowTypePeer extends StatelessWidget {
   const RowTypePeer({super.key,
     required this.onPressedBuyer,
