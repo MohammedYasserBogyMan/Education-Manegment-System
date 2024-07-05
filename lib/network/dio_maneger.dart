@@ -4,6 +4,7 @@ import 'package:dio/dio.dart';
 import '../models/error.dart';
 import '../models/error_model_login.dart';
 import '../models/new_login.dart';
+import '../models/profile_model.dart';
 import 'dio_client.dart';
 import 'endpoints.dart';
 
@@ -47,6 +48,21 @@ class DioManager {
       );
 
       return Right(NewLogin.fromJson(response.data));
+    } on DioException catch (e) {
+      return Left(
+          ErrorModelLogin.fromJson(e.response!.data).message!.toString());
+    }
+  }
+  Future<Either<String, ProfileModel>> getProfileAsync(
+
+  ) async {
+    try {
+      Response response = await dioClient.get(
+        Endpoints.admin,
+
+      );
+
+      return Right(ProfileModel.fromJson(response.data));
     } on DioException catch (e) {
       return Left(
           ErrorModelLogin.fromJson(e.response!.data).message!.toString());

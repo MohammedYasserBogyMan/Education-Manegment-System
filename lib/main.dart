@@ -12,6 +12,7 @@ import 'package:school/screen/layout_screen/layout_screen.dart';
 import 'package:school/screen/login/cubit/login_cubit.dart';
 // ignore: unused_import
 import 'package:school/screen/login/login_screen.dart';
+import 'package:school/screen/profile/cubit/profile_cubit.dart';
 import 'package:school/screen/register/cubit/register_cubit.dart';
 // ignore: unused_import
 import 'package:school/screen/register/register_screen.dart';
@@ -43,7 +44,8 @@ class MyApp extends StatelessWidget {
         BlocProvider<LoginCubit>(create: (context) => LoginCubit()),
         BlocProvider<SchedulesCubit>(create: (context) => SchedulesCubit()),
         BlocProvider<ExamsCubit>(create: (context) => ExamsCubit()),
-        BlocProvider<ParentCubit>(create: (context) => ParentCubit())
+        BlocProvider<ParentCubit>(create: (context) => ParentCubit()),
+        BlocProvider<ProfileCubit>(create: (context) => ProfileCubit())
       ],
       child: ScreenUtilInit(
         designSize: const Size(390, 844),
