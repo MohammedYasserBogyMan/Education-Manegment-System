@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:school/screen/profile/widget/build_info.dart';
 import 'package:school/shared/color.dart';
+import 'package:school/shared/components.dart';
 
 import 'cubit/profile_cubit.dart';
 
@@ -28,6 +29,9 @@ class ProfileScreen extends StatelessWidget {
         },
         builder: (context, state) {
           final cubit=ProfileCubit.get(context);
+          if(state is ProfileLoadingState){}else{
+            return Center(child: LoadingWidget());
+          }
           return Padding(
             padding: const EdgeInsets.all(16.0),
             child: Column(
@@ -41,24 +45,25 @@ class ProfileScreen extends StatelessWidget {
                           width: 100.w,
                           height: 100.h,
                         )),
-                    const Padding(
+                     Padding(
                       padding: EdgeInsets.symmetric(vertical: 10.0),
-                      child: Text('Student Name',
+                      child: Text(
+                         " ${cubit.profileModel.data!.firstName}${cubit.profileModel.data!.lastName}",
                           style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                               color: Colors.white)),
                     ),
-                    const Text('20200157',
+                     Text("${cubit.profileModel.data!.id}",
                         style: TextStyle(fontSize: 18, color: Colors.white)),
                   ],
                 ),
                 const Spacer(flex: 1),
-                buildInfo('Gender :', 'Male'),
-                buildInfo('Birth Date :', '15th Aug 2010'),
-                buildInfo('Address :', 'Lorem ipsum dolor sit amet'),
-                buildInfo('Class Room :', '1A'),
-                buildInfo('Date Entry :', '22nd Jul 2008'),
+                buildInfo('Gender :', cubit.profileModel.data!.gender.toString()),
+                buildInfo('Birth Date :', cubit.profileModel.data!.birthDate.toString()),
+                buildInfo('Address :', cubit.profileModel.data!.address.toString()),
+                buildInfo('Class Room :', cubit.profileModel.data!.classroom.toString()),
+                buildInfo('Date Entry :', cubit.profileModel.data!.updatedAt.toString()),
                 buildInfo('Status :', 'Active'),
                 const Spacer(flex: 2)
               ],
