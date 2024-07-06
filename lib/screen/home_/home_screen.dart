@@ -71,7 +71,7 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ),
                             Text(
-                              '20200157',
+                              '19',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,
