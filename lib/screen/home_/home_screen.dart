@@ -63,7 +63,7 @@ class HomeScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Mahmoud Ahmed',
+                              'MICHEALE',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 24,
@@ -182,107 +182,107 @@ class HomeScreen extends StatelessWidget {
                         },
                         itemCount: 3),
                   ),
-                  const Text(
-                    '12 new assignments uploaded',
-                    style: TextStyle(fontSize: 20, color: Colors.grey),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  overlapped(),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  const Divider(
-                    thickness: 1,
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  ListTile(
-                    leading: CircleAvatar(
-                      radius: 28.0,
-                      child: Image.asset('assets/icons/1.png'),
-                    ),
-                    title: Text(
-                      'Science',
-                      style: TextStyle(
-                          fontSize: 19,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.colorWhite),
-                    ),
-                    subtitle: Text(
-                      '3 Assignment',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.colorWhite),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  SizedBox(
-                    height: 230,
-                    child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: cubit.science.length,
-                        itemBuilder: (context, index) {
-                          return AspectRatio(
-                            aspectRatio: 1.5,
-                            child: Container(
-                              height: 250,
-                              margin: const EdgeInsets.only(right: 15),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                image: DecorationImage(
-                                    image: AssetImage(cubit.science[index]),
-                                    fit: BoxFit.contain),
-                                color: Colors.purple[100],
-                              ),
-                            ),
-                          );
-                        }),
-                  ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  ListTile(
-                    leading: CircleAvatar(
-                      radius: 28.0,
-                      child: Image.asset('assets/icons/2.png'),
-                    ),
-                    title: const Text(
-                      'Math',
-                      style:
-                          TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
-                    ),
-                    subtitle: const Text('4 Assignment'),
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  SizedBox(
-                    height: 230,
-                    child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: cubit.math.length,
-                        itemBuilder: (context, index) {
-                          return AspectRatio(
-                            aspectRatio: 1.5,
-                            child: Container(
-                              height: 250,
-                              margin: const EdgeInsets.only(right: 15),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                image: DecorationImage(
-                                    image: AssetImage(cubit.math[index]),
-                                    fit: BoxFit.contain),
-                                color: Colors.purple[100],
-                              ),
-                            ),
-                          );
-                        }),
-                  )
+                  // const Text(
+                  //   '12 new assignments uploaded',
+                  //   style: TextStyle(fontSize: 20, color: Colors.grey),
+                  // ),
+                  // const SizedBox(
+                  //   height: 20,
+                  // ),
+                  // overlapped(),
+                  // const SizedBox(
+                  //   height: 20,
+                  // ),
+                  // const Divider(
+                  //   thickness: 1,
+                  // ),
+                  // const SizedBox(
+                  //   height: 10,
+                  // ),
+                  // ListTile(
+                  //   leading: CircleAvatar(
+                  //     radius: 28.0,
+                  //     child: Image.asset('assets/icons/1.png'),
+                  //   ),
+                  //   title: Text(
+                  //     'Science',
+                  //     style: TextStyle(
+                  //         fontSize: 19,
+                  //         fontWeight: FontWeight.bold,
+                  //         color: AppColors.colorWhite),
+                  //   ),
+                  //   subtitle: Text(
+                  //     '3 Assignment',
+                  //     style: TextStyle(
+                  //         fontWeight: FontWeight.bold,
+                  //         color: AppColors.colorWhite),
+                  //   ),
+                  // ),
+                  // const SizedBox(
+                  //   height: 8,
+                  // ),
+                  // SizedBox(
+                  //   height: 230,
+                  //   child: ListView.builder(
+                  //       scrollDirection: Axis.horizontal,
+                  //       itemCount: cubit.science.length,
+                  //       itemBuilder: (context, index) {
+                  //         return AspectRatio(
+                  //           aspectRatio: 1.5,
+                  //           child: Container(
+                  //             height: 250,
+                  //             margin: const EdgeInsets.only(right: 15),
+                  //             decoration: BoxDecoration(
+                  //               borderRadius: BorderRadius.circular(20),
+                  //               image: DecorationImage(
+                  //                   image: AssetImage(cubit.science[index]),
+                  //                   fit: BoxFit.contain),
+                  //               color: Colors.purple[100],
+                  //             ),
+                  //           ),
+                  //         );
+                  //       }),
+                  // ),
+                  // const SizedBox(
+                  //   height: 5,
+                  // ),
+                  // ListTile(
+                  //   leading: CircleAvatar(
+                  //     radius: 28.0,
+                  //     child: Image.asset('assets/icons/2.png'),
+                  //   ),
+                  //   title: const Text(
+                  //     'Math',
+                  //     style:
+                  //         TextStyle(fontSize: 19, fontWeight: FontWeight.bold),
+                  //   ),
+                  //   subtitle: const Text('4 Assignment'),
+                  // ),
+                  // const SizedBox(
+                  //   height: 8,
+                  // ),
+                  // SizedBox(
+                  //   height: 230,
+                  //   child: ListView.builder(
+                  //       scrollDirection: Axis.horizontal,
+                  //       itemCount: cubit.math.length,
+                  //       itemBuilder: (context, index) {
+                  //         return AspectRatio(
+                  //           aspectRatio: 1.5,
+                  //           child: Container(
+                  //             height: 250,
+                  //             margin: const EdgeInsets.only(right: 15),
+                  //             decoration: BoxDecoration(
+                  //               borderRadius: BorderRadius.circular(20),
+                  //               image: DecorationImage(
+                  //                   image: AssetImage(cubit.math[index]),
+                  //                   fit: BoxFit.contain),
+                  //               color: Colors.purple[100],
+                  //             ),
+                  //           ),
+                  //         );
+                  //       }),
+                  // )
                 ],
               );
             },
