@@ -31,6 +31,8 @@ class ProfileScreen extends StatelessWidget {
           final cubit=ProfileCubit.get(context);
           if(state is ProfileLoadingState){
             return Center(child: LoadingWidget());
+          }else if (cubit.profileModel.data==null){
+          return LoadingWidget();
           }else{
             return Padding(
               padding: const EdgeInsets.all(16.0),
