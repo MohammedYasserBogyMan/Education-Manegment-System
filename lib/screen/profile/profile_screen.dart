@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/intl.dart';
 import 'package:school/screen/profile/widget/build_info.dart';
 import 'package:school/shared/color.dart';
 import 'package:school/shared/components.dart';
@@ -65,7 +66,7 @@ class ProfileScreen extends StatelessWidget {
                   buildInfo('Birth Date :', cubit.profileModel.data!.birthDate.toString()),
                   buildInfo('Address :', cubit.profileModel.data!.address.toString()),
                   buildInfo('Class Room :', cubit.profileModel.data!.classroom.toString()),
-                  buildInfo('Date Entry :', cubit.profileModel.data!.updatedAt.toString()),
+                  buildInfo('Date Entry :',DateFormat('yyyy-MM-dd').format(DateTime.parse(cubit.profileModel.data!.updatedAt.toString()) )),
                   buildInfo('Status :', 'Active'),
                   const Spacer(flex: 2)
                 ],
