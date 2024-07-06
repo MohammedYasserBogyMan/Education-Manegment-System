@@ -29,46 +29,48 @@ class ProfileScreen extends StatelessWidget {
         },
         builder: (context, state) {
           final cubit=ProfileCubit.get(context);
-          if(state is ProfileLoadingState){}else{
+          if(state is ProfileLoadingState){
             return Center(child: LoadingWidget());
+          }else{
+            return Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ClipRRect(
+                          child: Image.asset(
+                            'assets/images/image_person.png',
+                            width: 100.w,
+                            height: 100.h,
+                          )),
+                      Padding(
+                        padding: EdgeInsets.symmetric(vertical: 10.0),
+                        child: Text(
+                            " ${cubit.profileModel.data!.firstName}${cubit.profileModel.data!.lastName}",
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white)),
+                      ),
+                      Text("${cubit.profileModel.data!.id}",
+                          style: TextStyle(fontSize: 18, color: Colors.white)),
+                    ],
+                  ),
+                  const Spacer(flex: 1),
+                  buildInfo('Gender :', cubit.profileModel.data!.gender.toString()),
+                  buildInfo('Birth Date :', cubit.profileModel.data!.birthDate.toString()),
+                  buildInfo('Address :', cubit.profileModel.data!.address.toString()),
+                  buildInfo('Class Room :', cubit.profileModel.data!.classroom.toString()),
+                  buildInfo('Date Entry :', cubit.profileModel.data!.updatedAt.toString()),
+                  buildInfo('Status :', 'Active'),
+                  const Spacer(flex: 2)
+                ],
+              ),
+            );
           }
-          return Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ClipRRect(
-                        child: Image.asset(
-                          'assets/images/image_person.png',
-                          width: 100.w,
-                          height: 100.h,
-                        )),
-                     Padding(
-                      padding: EdgeInsets.symmetric(vertical: 10.0),
-                      child: Text(
-                         " ${cubit.profileModel.data!.firstName}${cubit.profileModel.data!.lastName}",
-                          style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white)),
-                    ),
-                     Text("${cubit.profileModel.data!.id}",
-                        style: TextStyle(fontSize: 18, color: Colors.white)),
-                  ],
-                ),
-                const Spacer(flex: 1),
-                buildInfo('Gender :', cubit.profileModel.data!.gender.toString()),
-                buildInfo('Birth Date :', cubit.profileModel.data!.birthDate.toString()),
-                buildInfo('Address :', cubit.profileModel.data!.address.toString()),
-                buildInfo('Class Room :', cubit.profileModel.data!.classroom.toString()),
-                buildInfo('Date Entry :', cubit.profileModel.data!.updatedAt.toString()),
-                buildInfo('Status :', 'Active'),
-                const Spacer(flex: 2)
-              ],
-            ),
-          );
+
         },
       ),
     );
