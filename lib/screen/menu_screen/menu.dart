@@ -39,12 +39,12 @@ class MenuScreen extends StatelessWidget {
                             color: Colors.white,
                             image: DecorationImage(
                               fit: BoxFit.contain,
-                              image: AssetImage('assets/icons/1.png'),
+                              image: AssetImage( 'assets/images/image_person.png'),
                             )),
                       ),
                     ),
                     const Text(
-                      "Dave Albert",
+                      "MICHEALE",
                       style: TextStyle(
                           fontSize: 20,
                           color: Colors.white,
