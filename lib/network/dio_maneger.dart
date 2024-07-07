@@ -3,6 +3,7 @@ import 'package:dio/dio.dart';
 
 import '../models/error.dart';
 import '../models/error_model_login.dart';
+import '../models/exame_model.dart';
 import '../models/new_login.dart';
 import '../models/profile_model.dart';
 import '../models/profile_s_model.dart';
@@ -64,6 +65,21 @@ class DioManager {
       );
 
       return Right(ProfileSModel.fromJson(response.data));
+    } on DioException catch (e) {
+      return Left(
+          ErrorModelLogin.fromJson(e.response!.data).message!.toString());
+    }
+  }
+  Future<Either<String, ExameModel>> getExameAsync(
+
+  ) async {
+    try {
+      Response response = await dioClient.get(
+        Endpoints.exame,
+
+      );
+
+      return Right(ExameModel.fromJson(response.data));
     } on DioException catch (e) {
       return Left(
           ErrorModelLogin.fromJson(e.response!.data).message!.toString());

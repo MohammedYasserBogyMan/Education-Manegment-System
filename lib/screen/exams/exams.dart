@@ -14,6 +14,7 @@ class ExamsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ExamsCubit.get(context).getExam();
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.transparent,
@@ -30,6 +31,7 @@ class ExamsScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Column(
                 children: [
+
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 5.w),
                     child: Container(
@@ -38,7 +40,9 @@ class ExamsScreen extends StatelessWidget {
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
                           color: AppColors.color2E),
-                      child: Padding(
+                      child:
+                        state is ProfileLoadingState||cubit.exameModel.data==null?LoadingWidget():
+                      Padding(
                         padding: EdgeInsets.symmetric(
                             horizontal: 8.w, vertical: 8.h),
                         child: Column(
@@ -84,7 +88,7 @@ class ExamsScreen extends StatelessWidget {
                               height: 10.h,
                             ),
                             Text(
-                              'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla ',
+                              cubit.exameModel.data!.description.toString(),
                               maxLines: 3,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
@@ -95,9 +99,9 @@ class ExamsScreen extends StatelessWidget {
                             const Spacer(),
                             Row(
                               children: [
-                                const ConDetiales(
+                                 ConDetiales(
                                   title: 'Create by',
-                                  details: 'Teacher Name',
+                                  details: cubit.exameModel.data!.teacherId==16?"MICHALE":"MOHAMED",
                                 ),
                                 SizedBox(
                                   width: 20.w,
@@ -109,9 +113,9 @@ class ExamsScreen extends StatelessWidget {
                                 SizedBox(
                                   width: 20.w,
                                 ),
-                                const ConDetiales(
+                                 ConDetiales(
                                   title: 'Duration',
-                                  details: '30 minite',
+                                  details: cubit.exameModel.data!.updatedAt.toString(),
                                   icon: FluentIcons.access_time_24_regular,
                                 ),
                               ],

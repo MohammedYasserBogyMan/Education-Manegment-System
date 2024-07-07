@@ -5,6 +5,7 @@ class Endpoints {
   static const String login = "login";
   static const String admin = "admin";
   static const String studentProfile = "student/show/19";
+  static const String exame = "exams/show/6";
   static const String register = "teacher/register";
 
 

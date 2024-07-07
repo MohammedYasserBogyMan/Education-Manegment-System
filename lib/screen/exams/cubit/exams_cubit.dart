@@ -1,9 +1,12 @@
 // ignore_for_file: non_constant_identifier_names
 
+import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:school/screen/exams/widget/all_screen.dart';
 
+import '../../../models/exame_model.dart';
+import '../../../network/dio_maneger.dart';
 import '../widget/done_screen.dart';
 import '../widget/to_do_screen.dart';
 
@@ -54,5 +57,22 @@ class ExamsCubit extends Cubit<ExamsState> {
     initialActive = index;
     isActiveScreen = Screens[index];
     emit(ChangeBottomActive());
+  }
+  ExameModel exameModel =ExameModel();
+  late String errorMessage;
+  DioManager dioManager =DioManager();
+  Future<void> getExam() async {
+    emit(ProfileLoadingState());
+    Either<String, ExameModel> sendLogin = await dioManager.getExameAsync(
+    );
+    sendLogin.fold((left) {
+      errorMessage = left;
+
+      emit(ProfileErrorState());
+    }, (right) {
+      exameModel = right;
+
+      emit(ProfileSuccessState());
+    });
   }
 }
