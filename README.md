@@ -115,7 +115,7 @@ Traditional educational systems often lack efficient communication channels betw
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/education-management-system.git
+   git clone https://github.com/MohammedYasserBogyMan/education-management-system.git
    cd education-management-system
    ```
 
